@@ -3,23 +3,7 @@ ini_set("display_errors", "Off");
 date_default_timezone_set("Asia/Shanghai");
 include "module/Parsedown.php";
 include "module/heading-array.php";
-// setting
 $Parsedown = new Parsedown();
-// query
-$file = $_GET['f'];
-if ($file == '') {
-    $file = 'index';
-}
-$mode = $_GET['m'];
-if ($mode != 'show' && $mode != 'word') {
-    $mode = 'show';
-}
-if (isset($_GET['s'])) {
-    $mode = 'show';
-}
-if (isset($_GET['w'])) {
-    $mode = 'word';
-}
 // config
 $path_config = "config.md";
 $md_config = file_get_contents($path_config);
@@ -52,9 +36,6 @@ foreach ($array_config['h1'][0]['h2'] as $h2) {
             if ($h3['title'] == 'nav') {
                 $config['footer']['nav'] = $h3['content'];
             }
-            // if ($h3['title'] == 'card') {
-            //     $config['footer']['card'] = $h3['h4'];
-            // }
             if ($h3['title'] == 'ending') {
                 $config['footer']['ending'] = $h3['content'];
             }
@@ -62,7 +43,7 @@ foreach ($array_config['h1'][0]['h2'] as $h2) {
     }
 }
 // content
-$path_content = $file . ".md";
+$path_content = "index.md";
 $md_content = file_get_contents($path_content);
 $html_content = $Parsedown->text($md_content);
 ?>
@@ -83,7 +64,6 @@ $html_content = $Parsedown->text($md_content);
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
         <style type="text/css">:root { --primary-h: <?=$config['global']['color']?>; } </style>
         <title><?=$config['global']['name']?></title>
-        <!-- <base href="http://localhost:8000?f="> -->
     </head>
     <body>
         <header>
@@ -101,39 +81,34 @@ $html_content = $Parsedown->text($md_content);
         <main>
             <div class="container">
                 <?php
-                if ($mode == 'show') {
-                    $array_content = heading_parse($html_content);
-                    echo '<div class="description">';
-                        echo $array_content['h1'][0]['content'];
-                    echo '</div>';
-                    foreach ($array_content['h1'][0]['h2'] as $i => $h2) {
-                        echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' b') . '">';
-                            echo '<h2 class="wow animate__animated animate__bounceIn">';
-                                echo $h2['title'];
-                            echo '</h2>';
-                            echo '<div class="wow animate__animated animate__zoomInDown">';
-                                echo $h2['content'];
-                            echo '</div>';
-                            if (is_array($h2['h3'])) {
-                                $n = count($h2['h3']);
-                                foreach ($h2['h3'] as $h3) {
-                                    echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
-                                    echo '<h3>' . $h3['title'] . '</h3>';
-                                    echo $h3['content'];
-                                    foreach ($h3['h4'] as $h4) {
-                                        $h4_json = json_encode($h4);
-                                        echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
-                                        echo $h4['title'];
-                                        echo "</a>";
-                                    }
-                                    echo '</div>';
-                                }
-                            }
+                $array_content = heading_parse($html_content);
+                echo '<div class="description">';
+                    echo $array_content['h1'][0]['content'];
+                echo '</div>';
+                foreach ($array_content['h1'][0]['h2'] as $i => $h2) {
+                    echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' b') . '">';
+                        echo '<h2 class="wow animate__animated animate__bounceIn">';
+                            echo $h2['title'];
+                        echo '</h2>';
+                        echo '<div class="wow animate__animated animate__zoomInDown">';
+                            echo $h2['content'];
                         echo '</div>';
-                    }
-                }
-                if ($mode == 'word') {
-                    echo $html_content;
+                        if (is_array($h2['h3'])) {
+                            $n = count($h2['h3']);
+                            foreach ($h2['h3'] as $h3) {
+                                echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
+                                echo '<h3>' . $h3['title'] . '</h3>';
+                                echo $h3['content'];
+                                foreach ($h3['h4'] as $h4) {
+                                    $h4_json = json_encode($h4);
+                                    echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
+                                    echo $h4['title'];
+                                    echo "</a>";
+                                }
+                                echo '</div>';
+                            }
+                        }
+                    echo '</div>';
                 }
                 ?>
             </div>

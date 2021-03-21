@@ -12,10 +12,6 @@
 
 ## header
 
-### icon
-
-`image/icon.ico`
-
 ### logo
 
 ![logo](image/logo.png)
