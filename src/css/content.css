@@ -1,0 +1,149 @@
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+h1 {
+  margin: 0.5rem 10rem;
+  padding-bottom: 0.3rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  text-align: center;
+}
+h2 {
+  padding-bottom: 0.3rem;
+  font-size: 1.5rem;
+  line-height: 1.225;
+  /* text-align: center; */
+}
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.43;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.0rem;
+}
+h6 {
+  font-size: 1.0rem;
+}
+p, blockquote, ul, ol, dl, table, pre {
+  margin-top: 0;
+  margin-bottom: 1.0rem;
+}
+ol ol, ul ol, ol ul, ul ul, 
+ol ul ol, ul ul ol, ol ul ul, ul ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ol, ul {
+  padding-left: 1.12rem;
+}
+li {
+  padding: 0.02rem;
+  text-align: left;
+}
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 1.0rem;
+  color: var(--color-gray);
+  border-left: 4px solid var(--color-gray-lighter);
+}
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table tr:nth-child(2n) {
+  background-color: var(--color-gray-lighter);
+}
+table th {
+  text-align: center;
+  padding: 1px 6px;
+  border: 1px solid var(--color-gray-light);
+  background: var(--color-gray);
+  color: var(--color-back);
+}
+table td {
+  padding: 1px 6px;
+  border: 1px solid var(--color-gray-light);
+}
+pre {
+  word-wrap: normal;
+  padding: 1.0rem;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--color-gray-lighter);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  font-size: 100%;
+  line-height: inherit;
+  word-wrap: normal;
+  white-space: pre;
+  border: 0;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: transparent;
+}
+pre code:before,
+pre code:after {
+  content: normal;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  padding: 0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--color-gray-lighter);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+code:before,
+code:after {
+  letter-spacing: -0.2rem;
+  content: "\00a0";
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+del {
+  text-decoration: line-through;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--color-gray-light);
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+  background: transparent;
+}
+a:hover {
+  color: var(--color-accent-light);
+}
+
+img {
+  max-width: 100%;
+}

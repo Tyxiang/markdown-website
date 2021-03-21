@@ -1,0 +1,31 @@
+@media (max-width: 1040px) {
+  header #logo {
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  header .nav {
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  main .subnav {
+    width: 100%;
+  }
+  main .subnav ul {
+    margin: 0 0 1rem 0;
+  }
+  main .subnav li a {
+    margin: 0 0 -1px -1px;
+    padding: 8px 16px;
+  }
+  main .subnav-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+}
