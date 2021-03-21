@@ -82,35 +82,7 @@ $html_content = $Parsedown->text($md_content);
         <main>
             <div class="container">
                 <?php
-                $array_content = heading_parse($html_content);
-                echo '<div class="description">';
-                    echo $array_content['h1'][0]['content'];
-                echo '</div>';
-                foreach ($array_content['h1'][0]['h2'] as $i => $h2) {
-                    echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' b') . '">';
-                        echo '<h2 class="wow animate__animated animate__bounceIn">';
-                            echo $h2['title'];
-                        echo '</h2>';
-                        echo '<div class="wow animate__animated animate__zoomInDown">';
-                            echo $h2['content'];
-                        echo '</div>';
-                        if (is_array($h2['h3'])) {
-                            $n = count($h2['h3']);
-                            foreach ($h2['h3'] as $h3) {
-                                echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
-                                echo '<h3>' . $h3['title'] . '</h3>';
-                                echo $h3['content'];
-                                foreach ($h3['h4'] as $h4) {
-                                    $h4_json = json_encode($h4);
-                                    echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
-                                    echo $h4['title'];
-                                    echo "</a>";
-                                }
-                                echo '</div>';
-                            }
-                        }
-                    echo '</div>';
-                }
+                echo $html_content;
                 ?>
             </div>
         </main>
@@ -122,14 +94,3 @@ $html_content = $Parsedown->text($md_content);
         </footer>
     </body>
 </html>
-
-<script src="js/pop.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script>
-    new WOW().init();
-</script>
-
-<?php
-// echo json_encode($about, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-//echo $html;
-?>
