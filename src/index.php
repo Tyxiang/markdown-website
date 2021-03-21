@@ -83,6 +83,7 @@ $html_content = $Parsedown->text($md_content);
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
         <style type="text/css">:root { --primary-h: <?=$config['global']['color']?>; } </style>
         <title><?=$config['global']['name']?></title>
+        <!-- <base href="http://localhost:8000?f="> -->
     </head>
     <body>
         <header>
