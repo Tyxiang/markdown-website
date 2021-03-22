@@ -1,5 +1,5 @@
 # mdweb
 
-- config.md 为配置文件；
-- index.md 为内容文件；
+- config.md is a configuration file used to define basic elements. 
+- index.md is the content file, used to define the content; 
 
