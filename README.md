@@ -1,5 +1,3 @@
-# mdweb
+# Markdown Single Page Web
 
-- 内容存储于本地；
-- md 与 php 同为根目录，可以规避 md 相对定位图片时的路径问题；
-- md 文件中的链接还是有问题；
+Use a markdown file to define a single page website.
