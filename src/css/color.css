@@ -1,13 +1,14 @@
 :root {
   /* color-primary */
-  --primary-h: 37;
+  --primary-h: 219;
   --color-primary-lighter:  hsl(var(--primary-h), 70%, 95%);
   --color-primary-light:    hsl(var(--primary-h), 70%, 85%);
   --color-primary:          hsl(var(--primary-h), 70%, 50%);
   --color-primary-dark:     hsl(var(--primary-h), 70%, 40%);
   --color-primary-darker:   hsl(var(--primary-h), 70%, 30%);
   /* color-accent */
-  --accent-h:               calc(var(--primary-h) - 180);
+  /* --accent-h:               calc(var(--primary-h) - 180); */
+  --accent-h: 39;
   --color-accent-lighter:   hsl(var(--accent-h), 100%, 95%);
   --color-accent-light:     hsl(var(--accent-h), 100%, 85%);
   --color-accent:           hsl(var(--accent-h), 100%, 50%);
