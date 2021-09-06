@@ -50,8 +50,6 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <link rel="stylesheet" href="css/content.css" type="text/css">
         <link rel="stylesheet" href="css/layout.css" type="text/css">
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
-        <link rel="stylesheet" href="css/this.css" type="text/css">
-        <link rel="stylesheet" href="css/this-small.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
         <title><?=$content_array['h1'][0]['title']?></title>
     </head>
@@ -71,36 +69,36 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <main>
             <div class="container">
                 <?php
-                    echo '<div class="description">';
-                        echo $content_array['h1'][0]['content'];
-                    echo '</div>';
-                    foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
-                        if ($h2['title'] != 'footer' && $h2['title'] != 'header') {
-                            echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' b') . '">';
-                                echo '<h2 class="wow animate__animated animate__bounceIn">';
-                                    echo $h2['title'];
-                                echo '</h2>';
-                                echo '<div class="wow animate__animated animate__zoomInDown">';
-                                    echo $h2['content'];
-                                echo '</div>';
-                                if (is_array($h2['h3'])) {
-                                    $n = count($h2['h3']);
-                                    foreach ($h2['h3'] as $h3) {
-                                        echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
-                                        echo '<h3>' . $h3['title'] . '</h3>';
-                                        echo $h3['content'];
-                                        foreach ($h3['h4'] as $h4) {
-                                            $h4_json = json_encode($h4);
-                                            echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
-                                            echo $h4['title'].'&nbsp;';
-                                            echo "</a>";
-                                        }
-                                        echo '</div>';
-                                    }
-                                }
+                echo '<div class="description">';
+                    echo $content_array['h1'][0]['content'];
+                echo '</div>';
+                foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
+                    if ($h2['title'] != 'footer' && $h2['title'] != 'header') {
+                        echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' bg-color') . '">';
+                            echo '<h2 class="wow animate__animated animate__bounceIn">';
+                                echo $h2['title'];
+                            echo '</h2>';
+                            echo '<div class="wow animate__animated animate__zoomInDown">';
+                                echo $h2['content'];
                             echo '</div>';
-                        }
+                            if (is_array($h2['h3'])) {
+                                $n = count($h2['h3']);
+                                foreach ($h2['h3'] as $h3) {
+                                    echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
+                                    echo '<h3>' . $h3['title'] . '</h3>';
+                                    echo $h3['content'];
+                                    foreach ($h3['h4'] as $h4) {
+                                        $h4_json = json_encode($h4);
+                                        echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
+                                        echo $h4['title'].'&nbsp;';
+                                        echo "</a>";
+                                    }
+                                    echo '</div>';
+                                }
+                            }
+                        echo '</div>';
                     }
+                }
                 ?>
             </div>
         </main>
@@ -114,6 +112,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
 </html>
 <script src="js/pop.min.js"></script>
 <script src="js/wow.min.js"></script>
+<!-- <script src="js/card.js"></script> -->
 <script>
     new WOW().init();
 </script>

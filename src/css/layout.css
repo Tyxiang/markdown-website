@@ -217,7 +217,8 @@ footer .ending {
   padding: 2rem 1rem;
   text-align: center;
 }
-.b {
+/* 背景色 */
+.bg-color {
   background-color: var(--color-primary-lighter);
 }
 .unit img {
@@ -242,6 +243,7 @@ footer .ending {
 .o4 {
   width: calc(25% - 2rem);
 }
+/* 五分之一 */
 .o5 {
   width: calc(20% - 2rem);
 }

@@ -11,7 +11,7 @@
   --accent-h: 39;
   --color-accent-lighter:   hsl(var(--accent-h), 100%, 95%);
   --color-accent-light:     hsl(var(--accent-h), 100%, 85%);
-  --color-accent:           hsl(var(--accent-h), 100%, 50%);
+  --color-accent:           hsl(var(--accent-h), 100%, 54%);
   --color-accent-dark:      hsl(var(--accent-h), 100%, 40%);
   --color-accent-darker:    hsl(var(--accent-h), 100%, 30%);
   /* color-gray */
