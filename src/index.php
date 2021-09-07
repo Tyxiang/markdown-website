@@ -47,6 +47,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
+        <link rel="stylesheet" href="css/content.css" type="text/css">
         <link rel="stylesheet" href="css/layout.css" type="text/css">
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
