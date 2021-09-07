@@ -88,12 +88,14 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
                                         echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
                                         echo '<h3>' . $h3['title'] . '</h3>';
                                         echo $h3['content'];
+                                        echo '<p>';
                                         foreach ($h3['h4'] as $h4) {
                                             $h4_json = json_encode($h4);
                                             echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
                                             echo $h4['title'].'&nbsp;';
                                             echo "</a>";
                                         }
+                                        echo '</p>';
                                         echo '</div>';
                                     }
                                 }
