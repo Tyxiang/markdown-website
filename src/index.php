@@ -45,7 +45,6 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link rel="shortcut icon" href="<?=$header['icon']?>" />
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-        <link rel="stylesheet" href="css/csshake-default.min.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
         <link rel="stylesheet" href="css/content.css" type="text/css">
@@ -76,16 +75,16 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
                 foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
                     if ($h2['title'] != 'footer' && $h2['title'] != 'header') {
                         echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' bg-color') . '">';
-                            echo '<h2 class="shake">';
+                            echo '<h2 class="wow animate__animated animate__bounceIn">';
                                 echo $h2['title'];
                             echo '</h2>';
-                            echo '<div class="shake">';
+                            echo '<div class="wow animate__animated animate__zoomInDown">';
                                 echo $h2['content'];
                             echo '</div>';
                             if (is_array($h2['h3'])) {
                                 $n = count($h2['h3']);
                                 foreach ($h2['h3'] as $h3) {
-                                    echo '<div class="card o' . $n . ' shake">';
+                                    echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
                                     echo '<h3>' . $h3['title'] . '</h3>';
                                     echo $h3['content'];
                                     foreach ($h3['h4'] as $h4) {
@@ -113,7 +112,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
 </html>
 <script src="js/pop.min.js"></script>
 <script src="js/wow.min.js"></script>
-<script src="js/card-height.js"></script>
+<script src="js/this.js"></script>
 <script>
     new WOW().init();
 </script>
