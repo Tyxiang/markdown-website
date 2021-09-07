@@ -112,14 +112,9 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
     </body>
 </html>
 <script src="js/pop.min.js"></script>
-<<<<<<< HEAD
 <script src="js/wow.min.js"></script>
 <script src="js/card-height.js"></script>
-=======
-<!-- <script src="js/wow.min.js"></script> -->
-<!-- <script src="js/card.js"></script> -->
->>>>>>> a86fd8d68730c78ae253d107aef2c4fdc0cf061f
 <script>
-    // new WOW().init();
+    new WOW().init();
 </script>
 

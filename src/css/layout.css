@@ -216,7 +216,6 @@ footer .ending {
   padding: 2rem 1rem;
   text-align: center;
 }
-/* 背景色 */
 .bg-color {
   background-color: var(--color-primary-lighter);
 }
@@ -242,7 +241,6 @@ footer .ending {
 .o4 {
   width: calc(25% - 2rem);
 }
-/* 五分之一 */
 .o5 {
   width: calc(20% - 2rem);
 }
