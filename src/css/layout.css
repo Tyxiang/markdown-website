@@ -45,69 +45,6 @@ header > .container:after {
   padding: 0 0.3rem;
 }
 
-sign {
-  flex: 0 0 auto;
-  background: var(--color-gray-light);
-  color: var(--color-gray);
-}
-sign .left {
-  float: left;
-  padding: 2px 1rem;
-}
-sign .right {
-  float: right;
-  padding: 2px 0.3rem;
-}
-sign a {
-  color: var(--color-gray-dark);
-}
-sign a:hover {
-  color: var(--color-gray-darker);
-}
-sign .active a {
-  color: var(--color-gray-darker);
-}
-
-location {
-  flex: 0 0 auto;
-  background: var(--color-primary-light);
-  color: var(--color-primary);
-}
-location .left {
-  float: left;
-  padding: 2px 1rem;
-}
-location .right {
-  float: right;
-  padding: 2px 0.3rem;
-}
-
-inquire {
-  flex: 0 0 auto;
-  /* padding: 2px; */
-}
-inquire .left {
-  float: left;
-  padding: 15px 0px 5px 0;
-}
-inquire .right {
-  float: right;
-  padding: 10px 0 5px 0;
-}
-
-status {
-  flex: 0 0 auto;
-  /* padding: 2px; */
-}
-status .left {
-  float: left;
-  padding: 0 0 10px 0;
-}
-status .right {
-  float: right;
-  padding: 0 0 10px 0;
-}
-
 /* banner {
   flex: 1 0 auto;
   padding: 1rem 0 0;
@@ -119,16 +56,6 @@ main {
   flex: 1 0 auto;
   padding: 1rem 0 0;
 }
-
-/* .scroll {
-  max-width: 62rem;
-  margin: 0 auto;
-  padding: 0;
-}
-.scroll img {
-  border: 1px solid var(--color-gray-bright);
-  width: 100%;
-} */
 
 main .subnav {
   float: left;
@@ -221,6 +148,10 @@ footer .ending {
 }
 .unit img {
   width: 40%;
+}
+
+.cards{
+  display: flex;
 }
 
 .card {
