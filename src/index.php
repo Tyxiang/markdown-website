@@ -48,6 +48,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="Keywords" Content="">
         <link rel="shortcut icon" href="<?=$header['icon']?>" />
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
