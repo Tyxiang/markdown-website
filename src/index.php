@@ -12,6 +12,7 @@ $content_html = $Parsedown->text($content_md);
 $content_array = heading_parse($content_html);
 //echo json_encode($content_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 //exit();
+$title = $content_array['h1'][0]['title'];
 foreach ($content_array['h1'][0]['h2'] as $h2) {
     if ($h2['title'] == 'header') {
         foreach ($h2['h3'] as $h3) {
@@ -25,6 +26,9 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
                 $header['nav'] = $h3['content'];
             }
         }
+    }
+    if ($h2['title'] == 'necker') {
+        $necker = $h2['content'];
     }
     if ($h2['title'] == 'footer') {
         foreach ($h2['h3'] as $h3) {
@@ -51,7 +55,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <link rel="stylesheet" href="css/layout.css" type="text/css">
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
-        <title><?=$content_array['h1'][0]['title']?></title>
+        <title><?=$title?></title>
     </head>
     <body>
         <header>
@@ -70,10 +74,10 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
             <div class="container">
                 <?php
                 echo '<div class="description">';
-                    echo $content_array['h1'][0]['content'];
+                    echo $necker;
                 echo '</div>';
                 foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
-                    if ($h2['title'] != 'footer' && $h2['title'] != 'header') {
+                    if ($h2['title'] != 'header' && $h2['title'] != 'necker' && $h2['title'] != 'footer') {
                         echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' bg-color') . '">';
                             echo '<h2 class="wow animate__animated animate__bounceIn">';
                                 echo $h2['title'];
