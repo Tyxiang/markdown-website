@@ -2,4 +2,4 @@
 
 Build a single page web by markdown.
 
-![main](image/main.jpeg)
+[Demo](http://forw.cc/markdown-single-page-web/demo)
