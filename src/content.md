@@ -124,7 +124,6 @@ pop description
 - item
 - item
 - item
-- item
 
 ### h3-3
 
