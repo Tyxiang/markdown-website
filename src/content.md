@@ -1,7 +1,5 @@
 # h1
 
-markdown,one,single,page,web
-
 ## header
 
 ### icon
