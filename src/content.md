@@ -1,5 +1,7 @@
 # h1
 
+markdown,one,single,page,web
+
 ## header
 
 ### icon
@@ -20,7 +22,7 @@
 
 ## necker
 
-![](image/banner.jpg)
+![banner](image/banner.jpg)
 
 page description
 

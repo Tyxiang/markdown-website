@@ -13,6 +13,7 @@ $content_array = heading_parse($content_html);
 //echo json_encode($content_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 //exit();
 $title = $content_array['h1'][0]['title'];
+$keyword = strip_tags($content_array['h1'][0]['content']);
 foreach ($content_array['h1'][0]['h2'] as $h2) {
     if ($h2['title'] == 'header') {
         foreach ($h2['h3'] as $h3) {
@@ -47,6 +48,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="keywords" content="<?=$keyword?>">
         <link rel="shortcut icon" href="<?=$header['icon']?>" />
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
