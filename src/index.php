@@ -75,7 +75,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <main>
             <div class="container">
                 <?php
-                echo '<div class="necker description">';
+                echo '<div class="necker">';
                     echo $necker;
                 echo '</div>';
                 foreach ($content_array['h1'][0]['h2'] as $i => $h2) {

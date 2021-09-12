@@ -130,7 +130,7 @@ footer .ending {
   margin: 0 auto;
 }
 
-.description {
+.necker {
   float: left;
   width: 100%;
   text-align: center;
@@ -140,8 +140,8 @@ footer .ending {
 .unit {
   float: left;
   width: 100%;
-  padding: 2rem 1rem;
   text-align: center;
+  padding: 2rem 1rem;
 }
 .bg-color {
   background-color: var(--color-primary-lighter);
@@ -150,15 +150,11 @@ footer .ending {
   width: 40%;
 }
 
-.cards {
-  display: flex;
-}
-
 .card {
   float: left;
   border: 1px solid var(--color-gray-dark);
   padding: 0.5rem 1.5rem;
-  margin: 0 1rem;
+  margin: 1rem 1rem;
 }
 .o1 {
   width: calc(100% - 2rem);

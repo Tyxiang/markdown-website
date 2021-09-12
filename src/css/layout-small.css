@@ -26,11 +26,15 @@
   }
 
   .container {
-    padding: 0 0.5rem;
+    /* padding: 0 0.5rem; */
+  }
+
+  .unit {
+    /* padding: 2rem 0rem; */
   }
 
   .card {
     width: 100%;
-    margin: 0.5rem 0;
+    margin: 1rem 1rem;
   }
 }
