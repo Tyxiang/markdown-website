@@ -128,6 +128,8 @@ footer .ending {
   overflow: hidden;
   max-width: 62rem;
   margin: 0 auto;
+  text-align: center;
+  /* background-color: red; */
 }
 
 .banner {
@@ -141,13 +143,14 @@ footer .ending {
   float: left;
   width: 100%;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0rem 0rem;
+  /* background-color: red; */
 }
 .bg-color {
-  background-color: var(--color-primary-lighter);
+  /* background-color: var(--color-primary-lighter); */
 }
 .unit img {
-  width: 40%;
+  /* width: 40%; */
 }
 
 .card {

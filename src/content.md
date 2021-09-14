@@ -1,27 +1,6 @@
 # h1
 
-## header
-
-### icon
-
-`image/logo.ico`
-
-### logo
-
-![logo](image/logo.png)
-
-### nav
-
-- [h2-1](#h2-1)
-- [h2-2](#h2-2)
-- [h2-3](#h2-3)
-- [h2-4](#h2-4)
-- [h2-5](#h2-5)
-
-## banner
-
 ![banner](image/banner.jpg)
-
 page description
 
 ## h2-1
@@ -184,13 +163,33 @@ pop description
 - item
 - item
 
-## footer
+## CONFIG
 
-### nav
+### header
+
+#### icon
+
+`image/logo.ico`
+
+#### logo
+
+![logo](image/logo.png)
+
+#### nav
+
+- [h2-1](#h2-1)
+- [h2-2](#h2-2)
+- [h2-3](#h2-3)
+- [h2-4](#h2-4)
+- [h2-5](#h2-5)
+
+### footer
+
+#### nav
 
 [底部导航](#) - [底部导航](#) - [底部导航](#) - [底部导航](#) - [底部导航](#) - [底部导航](#)
 
-### ending
+#### ending
 
 版权所有 © 2021 北京超级管理有限公司  
 保留所有权利  

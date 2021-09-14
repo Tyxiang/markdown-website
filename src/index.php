@@ -13,31 +13,34 @@ $content_array = heading_parse($content_html);
 //echo json_encode($content_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 //exit();
 $title = $content_array['h1'][0]['title'];
-/* $keywords = strip_tags($content_array['h1'][0]['content']); */
 foreach ($content_array['h1'][0]['h2'] as $h2) {
-    if ($h2['title'] == 'header') {
+    if ($h2['title'] == 'CONFIG') {
         foreach ($h2['h3'] as $h3) {
-            if ($h3['title'] == 'icon') {
-                $header['icon'] = strip_tags($h3['content']);
+            if ($h3['title'] == 'header') {
+                foreach ($h3['h4'] as $h4) {
+                    if ($h4['title'] == 'icon') {
+                        $config['header']['icon'] = strip_tags($h4['content']);
+                    }
+                    if ($h4['title'] == 'logo') {
+                        $config['header']['logo'] = $h4['content'];
+                    }
+                    if ($h4['title'] == 'nav') {
+                        $config['header']['nav'] = $h4['content'];
+                    }
+                }
             }
-            if ($h3['title'] == 'logo') {
-                $header['logo'] = $h3['content'];
+            if ($h3['title'] == 'footer') {
+                foreach ($h3['h4'] as $h4) {
+                    if ($h4['title'] == 'nav') {
+                        $config['footer']['nav'] = $h4['content'];
+                    }
+                    if ($h4['title'] == 'ending') {
+                        $config['footer']['ending'] = $h4['content'];
+                    }
+                }
             }
-            if ($h3['title'] == 'nav') {
-                $header['nav'] = $h3['content'];
-            }
-        }
-    }
-    if ($h2['title'] == 'banner') {
-        $banner = $h2['content'];
-    }
-    if ($h2['title'] == 'footer') {
-        foreach ($h2['h3'] as $h3) {
-            if ($h3['title'] == 'nav') {
-                $footer['nav'] = $h3['content'];
-            }
-            if ($h3['title'] == 'ending') {
-                $footer['ending'] = $h3['content'];
+            if ($h3['title'] == 'keywords') {
+                $config['keywords'] = strip_tags($h3['content']);
             }
         }
     }
@@ -48,14 +51,15 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="Keywords" Content="">
-        <link rel="shortcut icon" href="<?=$header['icon']?>" />
-        <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+        <meta name="Keywords" Content="<?=$config['keywords']?>">
+        <link rel="shortcut icon" href="<?=$config['header']['icon']?>" />
+        <link rel="stylesheet" href="css/normalize.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
         <link rel="stylesheet" href="css/content.css" type="text/css">
         <link rel="stylesheet" href="css/layout.css" type="text/css">
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
+        <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
         <title><?=$title?></title>
     </head>
@@ -64,23 +68,21 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
             <div class="container">
                 <div id="logo">
                     <a href="index.php">
-                        <?=$header['logo']?>
+                        <?=$config['header']['logo']?>
                     </a>
                 </div>
                 <div class="nav">
-                    <?=$header['nav']?>
+                    <?=$config['header']['nav']?>
                 </div>
             </div>
         </header>
         <main>
             <div class="container">
                 <?php
-                echo '<div class="banner">';
-                    echo $banner;
-                echo '</div>';
+                echo $content_array['h1'][0]['content'];
                 foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
-                    if ($h2['title'] != 'header' && $h2['title'] != 'banner' && $h2['title'] != 'footer') {
-                        echo '<div id="' . $h2['title'] . '" class="unit' . ($i % 2 === 0 ? '' : ' bg-color') . '">';
+                    if ($h2['title'] != 'CONFIG') {
+                        echo '<div id="' . $h2['title'] . '" class="unit">';
                             echo '<h2 class="wow animate__animated animate__bounceIn">';
                                 echo $h2['title'];
                             echo '</h2>';
@@ -114,8 +116,8 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         </main>
         <footer>
             <div class="container">
-                <div class="nav"><?=$footer['nav']?></div>
-                <div class="ending"><?=$footer['ending']?></div>
+                <div class="nav"><?=$config['footer']['nav']?></div>
+                <div class="ending"><?=$config['footer']['ending']?></div>
             </div>
         </footer>
     </body>
