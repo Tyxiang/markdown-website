@@ -1,6 +1,7 @@
 # h1
 
 ![banner](image/banner.jpg)
+
 page description
 
 ## h2-1
@@ -44,9 +45,9 @@ unit description
 card description
 
 - item
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
 
 ### h3-2
 
@@ -56,8 +57,8 @@ card description
 
 - item
 - item
-<br>
-<br>
+  <br>
+  <br>
 
 ### h3-3
 
@@ -100,7 +101,7 @@ card description
 
 - item
 - item
-<br><br>
+  <br><br>
 
 #### h4
 
@@ -165,11 +166,17 @@ pop description
 
 ## CONFIG
 
-### header
+### title
 
-#### icon
+xxx
+
+### icon
 
 `image/logo.ico`
+
+### keywords
+
+### header
 
 #### logo
 
@@ -187,10 +194,9 @@ pop description
 
 #### nav
 
-[底部导航](#) - [底部导航](#) - [底部导航](#) - [底部导航](#) - [底部导航](#) - [底部导航](#)
+[footer-nav](#) - [footer-nav](#) - [footer-nav](#) - [footer-nav](#) - [footer-nav](#)
 
 #### ending
 
-版权所有 © 2021 北京超级管理有限公司  
-保留所有权利  
-[京 ICP 备 2020033828 号](http://www.beian.miit.gov.cn/)
+Copyright © 2021 forw.cc  
+All rights reserved

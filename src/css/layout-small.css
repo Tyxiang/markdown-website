@@ -25,16 +25,8 @@
     padding: 0;
   }
 
-  .container {
-    /* padding: 0 0.5rem; */
-  }
-
-  .unit {
-    /* padding: 2rem 0rem; */
-  }
-
   .card {
-    width: 100%;
+    width: calc(100% - 2rem);
     margin: 1rem 1rem;
   }
 }

@@ -12,35 +12,30 @@ $content_html = $Parsedown->text($content_md);
 $content_array = heading_parse($content_html);
 //echo json_encode($content_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 //exit();
-$title = $content_array['h1'][0]['title'];
+$config['title'] = $content_array['h1'][0]['title'];
 foreach ($content_array['h1'][0]['h2'] as $h2) {
     if ($h2['title'] == 'CONFIG') {
         foreach ($h2['h3'] as $h3) {
-            if ($h3['title'] == 'header') {
-                foreach ($h3['h4'] as $h4) {
-                    if ($h4['title'] == 'icon') {
-                        $config['header']['icon'] = strip_tags($h4['content']);
-                    }
-                    if ($h4['title'] == 'logo') {
-                        $config['header']['logo'] = $h4['content'];
-                    }
-                    if ($h4['title'] == 'nav') {
-                        $config['header']['nav'] = $h4['content'];
-                    }
-                }
+            if ($h3['title'] == 'title') {
+                $config['title'] = strip_tags($h3['content']);
+            } 
+            if ($h3['title'] == 'icon') {
+                $config['icon'] = strip_tags($h3['content']);
             }
-            if ($h3['title'] == 'footer') {
-                foreach ($h3['h4'] as $h4) {
-                    if ($h4['title'] == 'nav') {
-                        $config['footer']['nav'] = $h4['content'];
-                    }
-                    if ($h4['title'] == 'ending') {
-                        $config['footer']['ending'] = $h4['content'];
-                    }
-                }
+            if ($h3['title'] == 'logo') {
+                $config['logo'] = $h3['content'];
             }
             if ($h3['title'] == 'keywords') {
                 $config['keywords'] = strip_tags($h3['content']);
+            }
+            if ($h3['title'] == 'header-nav') {
+                $config['header-nav'] = $h3['content'];
+            }
+            if ($h3['title'] == 'footer-nav') {
+                $config['footer-nav'] = $h3['content'];
+            }
+            if ($h3['title'] == 'ending') {
+                $config['ending'] = $h3['content'];
             }
         }
     }
@@ -52,7 +47,7 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="Keywords" Content="<?=$config['keywords']?>">
-        <link rel="shortcut icon" href="<?=$config['header']['icon']?>" />
+        <link rel="shortcut icon" href="<?=$config['icon']?>" />
         <link rel="stylesheet" href="css/normalize.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
@@ -61,18 +56,18 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
-        <title><?=$title?></title>
+        <title><?=$config['title']?></title>
     </head>
     <body>
         <header>
             <div class="container">
                 <div id="logo">
                     <a href="index.php">
-                        <?=$config['header']['logo']?>
+                        <?=$config['logo']?>
                     </a>
                 </div>
                 <div class="nav">
-                    <?=$config['header']['nav']?>
+                    <?=$config['header-nav']?>
                 </div>
             </div>
         </header>
@@ -116,8 +111,8 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
         </main>
         <footer>
             <div class="container">
-                <div class="nav"><?=$config['footer']['nav']?></div>
-                <div class="ending"><?=$config['footer']['ending']?></div>
+                <div class="nav"><?=$config['footer-nav']?></div>
+                <div class="ending"><?=$config['ending']?></div>
             </div>
         </footer>
     </body>

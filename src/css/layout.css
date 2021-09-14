@@ -45,12 +45,6 @@ header > .container:after {
   padding: 0 0.3rem;
 }
 
-/* banner {
-  flex: 1 0 auto;
-  padding: 1rem 0 0;
-  text-align: center;
-} */
-
 main {
   /* margin-top: 120px; */
   flex: 1 0 auto;
@@ -132,45 +126,30 @@ footer .ending {
   /* background-color: red; */
 }
 
-.banner {
-  float: left;
-  width: 100%;
-  text-align: center;
-  font-style: italic;
-}
-
 .unit {
   float: left;
   width: 100%;
-  text-align: center;
-  padding: 0rem 0rem;
-  /* background-color: red; */
-}
-.bg-color {
-  /* background-color: var(--color-primary-lighter); */
-}
-.unit img {
-  /* width: 40%; */
+  margin: 1rem 0rem;
 }
 
 .card {
   float: left;
   border: 1px solid var(--color-gray-dark);
   padding: 0.5rem 1.5rem;
-  margin: 1rem 1rem;
+  margin: 1rem 0.5rem;
 }
 .o1 {
-  width: calc(100% - 2rem);
+  width: calc(100% - 1rem);
 }
 .o2 {
-  width: calc(50% - 2rem);
+  width: calc(50% - 1rem);
 }
 .o3 {
-  width: calc(33.334% - 2rem);
+  width: calc(33.333% - 1rem);
 }
 .o4 {
-  width: calc(25% - 2rem);
+  width: calc(25% - 1rem);
 }
 .o5 {
-  width: calc(20% - 2rem);
+  width: calc(20% - 1rem);
 }
