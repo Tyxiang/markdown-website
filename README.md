@@ -49,4 +49,4 @@ Copyright © 2021 forw.cc
 All rights reserved
 ```
 
-[More ... ](https://github.com/Tyxiang/markdown-single-page-web/wiki)
+[More ... ](doc/Home.md)
