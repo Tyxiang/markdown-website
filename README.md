@@ -2,29 +2,58 @@
 
 Build a single page web by markdown.
 
-[Demo](http://forw.cc/markdown-single-page-web/demo)
+## 1. Usage
 
-## 1. Markdown
+Web like this:
+
+![](image/snap.png)
+
+Build by this:
 
 ```markdown
-# h1
+# smallest
 
-h1 content
+## unit title
 
-## h2
+unit description
 
-h2 content
+### card title
 
-### h3
+![](image/bank.svg)
 
-h3 content
+card description
 
-#### h4
+- item
+- item
+- item
 
-h4 content
+### card title
+
+![](image/bank.svg)
+
+card description
+
+- item
+- item
+- item
+
+## CONFIG
+
+### header
+
+#### logo
+
+![](image/logo.png)
+
+### footer
+
+#### ending
+
+Copyright © 2021 forw.cc  
+All rights reserved
 ```
 
-## 2. Markdown to Web
+That is means:
 
 | Markdown   | Web              | Other |
 | ---------- | ---------------- | ----- |
@@ -58,7 +87,7 @@ Example:
 
 ### title
 
-smallest
+demo
 
 ### icon
 
@@ -68,22 +97,26 @@ image/logo.ico
 
 single page web one 
 
-### logo
+### header
+
+#### logo
 
 ![logo](image/logo.png)
 
-### header-nav
+#### nav
 
 - [About](#about)
 - [Product](#product)
 - [Support](#support)
 - [Connect](#connect)
 
-### footer-nav
+### footer
 
-[Declare](#) - [E-mail](#) - [Office](#) - [thanks](#)
+#### nav
 
-### ending
+[Declare](#) - [Email](#) - [Office](#) - [Thanks](#)
+
+#### ending
 
 Copyright © 2021 forw.cc  
 All rights reserved  
