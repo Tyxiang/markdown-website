@@ -213,8 +213,7 @@ Copyright © 2021 forw.cc
 All rights reserved
 
 ### footer
-
-[Declare](#) - [Email](#) - [Office](#) - [Thanks](#) - [Space](#)
-
+---
+<br>
 Copyright © 2021 forw.cc  
 All rights reserved

@@ -99,7 +99,7 @@ main .subnav-content {
 .card {
   float: left;
   border: 1px solid var(--color-gray-dark);
-  padding: 0.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   margin: 1rem 0.5rem;
 }
 .o1 {
@@ -125,7 +125,7 @@ ending {
   background: var(--color-primary);
   color: var(--color-primary-light);
   font-size: 0.9rem;
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1rem 1rem;
   /* margin: 2rem 2rem; */
 }
 ending a {
@@ -163,7 +163,7 @@ footer {
   flex: 0 0 auto;
   background: var(--color-primary);
   color: var(--color-primary-light);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
   text-align: center;
   /* margin: 1rem 0 0 0; */
