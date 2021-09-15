@@ -3,7 +3,7 @@ ini_set("display_errors", "Off");
 date_default_timezone_set("Asia/Shanghai");
 include "module/Parsedown.php";
 include "module/heading-array.php";
-$content_dir = "content/";
+$content_dir = "./";
 $content_default = "index.md";
 $content_path = $content_default;
 if ($_GET["f"]) {
