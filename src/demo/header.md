@@ -18,6 +18,7 @@ list of keywords separated by spaces
 
 #### nav
 
-- [config](index.php?f=demo/config)
+- [index](index.php)
 - [demo-1](index.php?f=demo/demo-1)
 - [demo-2](index.php?f=demo/demo-2)
+- [config](index.php?f=demo/config)
