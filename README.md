@@ -6,7 +6,7 @@ Web like this:
 
 ![](image/snap.png)
 
-Build by this:
+Build by `index.md`:
 
 ```markdown
 # smallest
