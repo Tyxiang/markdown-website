@@ -209,8 +209,8 @@ demo
 
 #### right
 
-Copyright © 2021 forw.cc  
-All rights reserved
+Simply use markdown files to build  
+a single page web page.
 
 ### footer
 ---
