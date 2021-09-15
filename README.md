@@ -49,4 +49,4 @@ Copyright © 2021 forw.cc
 All rights reserved
 ```
 
-[More ... ](design/readme.svg)
+[More ... ](design/readme.png)
