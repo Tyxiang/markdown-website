@@ -42,15 +42,21 @@ foreach ($content_array['h1'][0]['h2'] as $h2) {
                     }
                 }
             }
-            if ($h3['title'] == 'footer') {
+            if ($h3['title'] == 'ending') {
                 foreach ($h3['h4'] as $h4) {
-                    if ($h4['title'] == 'nav') {
-                        $config['footer']['nav'] = $h4['content'];
+                    if ($h4['title'] == 'left') {
+                        $config['ending']['left'] = $h4['content'];
                     }
-                    if ($h4['title'] == 'ending') {
-                        $config['footer']['ending'] = $h4['content'];
+                    if ($h4['title'] == 'center') {
+                        $config['ending']['center'] = $h4['content'];
+                    }
+                    if ($h4['title'] == 'right') {
+                        $config['ending']['right'] = $h4['content'];
                     }
                 }
+            }
+            if ($h3['title'] == 'footer') {
+                $config['footer'] = $h3['content'];
             }
         }
     }
@@ -133,19 +139,31 @@ foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
             </div>
         </main>
         <?php
+if ($config['ending']) {
+    echo '<ending>';
+    echo '<div class="container">';
+    if ($config['ending']['left']) {
+        echo '<div class="left">';
+        echo $config['ending']['left'];
+        echo '</div>';
+    }
+    if ($config['ending']['center']) {
+        echo '<div class="center">';
+        echo $config['ending']['center'];
+        echo '</div>';
+    }
+    if ($config['ending']['right']) {
+        echo '<div class="right">';
+        echo $config['ending']['right'];
+        echo '</div>';
+    }
+    echo '</div>';
+    echo '</ending>';
+}
 if ($config['footer']) {
     echo '<footer>';
     echo '<div class="container">';
-    if ($config['footer']['nav']) {
-        echo '<div class="nav">';
-        echo $config['footer']['nav'];
-        echo '</div>';
-    }
-    if ($config['footer']['ending']) {
-        echo '<div class="ending">';
-        echo $config['footer']['ending'];
-        echo '</div>';
-    }
+    echo $config['footer'];
     echo '</div>';
     echo '</footer>';
 }

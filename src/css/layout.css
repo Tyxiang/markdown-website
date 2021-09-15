@@ -82,42 +82,6 @@ main .subnav-content {
   padding: 0 0 0 2rem;
 }
 
-footer {
-  /*首位必须为0，否则footer异常*/
-  flex: 0 0 auto;
-  background: var(--color-primary);
-  color: var(--color-primary-light);
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  text-align: center;
-  margin: 1rem 0 0 0;
-}
-footer a {
-  color: var(--color-primary-lighter);
-  /* 换行不断词 */
-  /* display: inline-block;  */
-}
-footer a:hover {
-  color: var(--color-primary-darker);
-}
-footer .nav .active a {
-  color: var(--color-primary-darker);
-  font-weight: bold;
-}
-footer p {
-  margin: 0.2rem 0;
-}
-footer i {
-  font-size: 1.3rem;
-}
-
-footer .nav {
-  margin: 0 0 1rem 0;
-}
-
-footer .ending {
-}
-
 .container {
   overflow: hidden;
   max-width: 62rem;
@@ -152,4 +116,66 @@ footer .ending {
 }
 .o5 {
   width: calc(20% - 1rem);
+}
+
+
+ending {
+  /*首位必须为0，否则footer异常*/
+  flex: 0 0 auto;
+  background: var(--color-primary);
+  color: var(--color-primary-light);
+  font-size: 0.9rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+  /* margin: 2rem 2rem; */
+}
+ending a {
+  color: var(--color-primary-lighter);
+  /* 换行不断词 */
+  /* display: inline-block;  */
+}
+ending a:hover {
+  color: var(--color-primary-darker);
+}
+ending ul,p {
+  margin-bottom: 0;
+}
+ending .left {
+  float: left;
+  width: 25%;
+  text-align: left;
+  padding: 1rem 1rem;
+}
+ending .center {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 1rem 1rem;
+}
+ending .right {
+  float: right;
+  width: 50%;
+  text-align: right;
+  padding: 1rem 1rem;
+}
+
+footer {
+  /*首位必须为0，否则footer异常*/
+  flex: 0 0 auto;
+  background: var(--color-primary);
+  color: var(--color-primary-light);
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  /* margin: 1rem 0 0 0; */
+}
+footer a {
+  color: var(--color-primary-lighter);
+  /* 换行不断词 */
+  /* display: inline-block;  */
+}
+footer a:hover {
+  color: var(--color-primary-darker);
+}
+footer ul,p {
+  margin-bottom: 0;
 }

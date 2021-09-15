@@ -189,26 +189,32 @@ demo
 - [Support](#h2-3)
 - [Connect](#h2-4)
 
+### ending
+
+#### left
+
+- [Declare](#) 
+- [Email](#) 
+- [Office](#) 
+- [Thanks](#) 
+- [Space](#)
+
+#### center
+
+- [Declare](#) 
+- [Email](#) 
+- [Office](#) 
+- [Thanks](#) 
+- [Space](#)
+
+#### right
+
+Copyright © 2021 forw.cc  
+All rights reserved
+
 ### footer
-
-#### nav
-
-- [About](#h2-1)
-- [Product](#h2-2)
-- [Support](#h2-3)
-- [Connect](#h2-4)
-
-#### ending
 
 [Declare](#) - [Email](#) - [Office](#) - [Thanks](#) - [Space](#)
 
 Copyright © 2021 forw.cc  
 All rights reserved
-
-#### left
-
-#### center
-
-#### right
-
-#### over

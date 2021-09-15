@@ -29,4 +29,15 @@
     width: calc(100% - 2rem);
     margin: 1rem 1rem;
   }
+
+  ending .left {
+    width: 100%;
+  }
+  ending .center {
+    width: 100%;
+  }
+  ending .right {
+    width: 100%;
+    text-align: center;
+  }
 }

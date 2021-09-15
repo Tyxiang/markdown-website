@@ -34,7 +34,5 @@ card description
 
 ### footer
 
-#### ending
-
 Copyright © 2021 forw.cc  
 All rights reserved
