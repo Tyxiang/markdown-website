@@ -12,3 +12,5 @@ page description
 ## mode
 
 show
+
+## footer

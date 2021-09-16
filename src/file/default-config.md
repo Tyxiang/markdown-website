@@ -1,4 +1,4 @@
-# default config
+# default
 
 File not found!
 
@@ -48,8 +48,8 @@ text
 
 ### right
 
-Simply use markdown files to build  
-a single page web page.
+Simply use markdown files   
+to build a website  
 
 ## footer
 ---

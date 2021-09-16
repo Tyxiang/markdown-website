@@ -13,7 +13,7 @@ function update_data($path, $data)
     $data_html = $Parsedown->text($data_md);
     $data_array = heading_parse($data_html);
     foreach ($data_array['h1'] as $h1) {
-        if ($h1['title'] == 'Config') {
+        if ($h1['title'] == 'CONFIG') {
             foreach ($h1['h2'] as $h2) {
                 if ($h2['title'] == 'name') {
                     $data['config']['name'] = strip_tags($h2['content']);
@@ -31,6 +31,7 @@ function update_data($path, $data)
                     $data['config']['mode'] = strip_tags($h2['content']);
                 }
                 if ($h2['title'] == 'header') {
+                    $data['config']['header'] = array();
                     foreach ($h2['h3'] as $h3) {
                         if ($h3['title'] == 'logo') {
                             $data['config']['header']['logo'] = $h3['content'];
@@ -41,6 +42,7 @@ function update_data($path, $data)
                     }
                 }
                 if ($h2['title'] == 'ending') {
+                    $data['config']['ending'] = array();
                     foreach ($h2['h3'] as $h3) {
                         if ($h3['title'] == 'left') {
                             $data['config']['ending']['left'] = $h3['content'];

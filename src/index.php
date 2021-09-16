@@ -17,7 +17,7 @@ if ($_GET["f"]) {
 $data_path = $file_dir . $data_filename;
 $data = update_data($data_path, $data);
 // echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-// exit();
+//exit();
 ?>
 <!DOCTYPE html>
 <html class="no-js">
