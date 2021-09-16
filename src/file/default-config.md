@@ -1,8 +1,8 @@
-# xxx
+# default config
 
-xxxxxxx
+File not found!
 
-# Config
+# CONFIG
 
 ## name
 
@@ -14,40 +14,37 @@ demo
 
 ## keywords
 
+markdown website md site web
+
 ## mode
 
-show
+text
 
 ## header
 
 ### logo
 
-![logo](image/forw.png)
+![logo](image/logo.png)
 
 ### nav
 
-- [About](#h2-1)
-- [Product](#h2-2)
-- [Support](#h2-3)
-- [Connect](#h2-4)
+- [index](index.php)
+- [default-config](index.php?f=default-config)
 
 ## ending
 
 ### left
 
-- [Declare](#) 
-- [Email](#) 
-- [Office](#) 
-- [Thanks](#) 
-- [Space](#)
+- [page](index.php?f=page)
+- [unit](index.php?f=unit)
+- [card](index.php?f=card)
+- [pop](index.php?f=pop)
 
 ### center
 
-- [Declare](#) 
-- [Email](#) 
-- [Office](#) 
-- [Thanks](#) 
-- [Space](#)
+- [header](index.php?f=header)
+- [footer](index.php?f=footer)
+- [ending](index.php?f=ending)
 
 ### right
 
