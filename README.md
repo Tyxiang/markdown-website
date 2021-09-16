@@ -1,6 +1,6 @@
-# Markdown Single Page Web
+# Markdown Website
 
-Build a single page web by markdown.
+Build a website by markdown.
 
 Web like this:
 
