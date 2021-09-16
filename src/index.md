@@ -164,42 +164,43 @@ pop description
 - item
 - item
 
-## CONFIG
 
-### title
+
+
+
+
+# CONFIG
+
+## title
 
 demo
 
-### icon
+## icon
 
 `image/f.ico`
 
-### keywords
+## keywords
 
-### header
+## mode
 
-#### logo
+show
+
+## header
+
+### logo
 
 ![logo](image/forw.png)
 
-#### nav
+### nav
 
 - [About](#h2-1)
 - [Product](#h2-2)
 - [Support](#h2-3)
 - [Connect](#h2-4)
 
-### ending
+## ending
 
-#### left
-
-- [Declare](#) 
-- [Email](#) 
-- [Office](#) 
-- [Thanks](#) 
-- [Space](#)
-
-#### center
+### left
 
 - [Declare](#) 
 - [Email](#) 
@@ -207,12 +208,20 @@ demo
 - [Thanks](#) 
 - [Space](#)
 
-#### right
+### center
+
+- [Declare](#) 
+- [Email](#) 
+- [Office](#) 
+- [Thanks](#) 
+- [Space](#)
+
+### right
 
 Simply use markdown files to build  
 a single page web page.
 
-### footer
+## footer
 ---
 <br>
 Copyright © 2021 forw.cc  

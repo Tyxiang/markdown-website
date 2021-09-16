@@ -3,60 +3,65 @@ ini_set("display_errors", "Off");
 date_default_timezone_set("Asia/Shanghai");
 include "module/Parsedown.php";
 include "module/heading-array.php";
-$content_dir = "./";
-$content_default = "index.md";
-$content_path = $content_default;
+$data_dir = "./";
+$data_default = "index.md";
+$data_path = $data_default;
 if ($_GET["f"]) {
-    $content_name = $_GET["f"] . ".md";
-    $content_path = $content_dir . $content_name;
+    $data_name = $_GET["f"] . ".md";
+    $data_path = $data_dir . $data_name;
 }
-$content_md = file_get_contents($content_path);
-//echo $content_md;
+$data_md = file_get_contents($data_path);
+//echo $data_md;
 $Parsedown = new Parsedown();
-$content_html = $Parsedown->text($content_md);
-//echo $content_html;
-$content_array = heading_parse($content_html);
-//echo json_encode($content_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+$data_html = $Parsedown->text($data_md);
+//echo $data_html;
+$data_array = heading_parse($data_html);
+//echo json_encode($data_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 //exit();
+$content = array();
+$content = $data_array['h1'][0];
 $config = array();
-$config['title'] = $content_array['h1'][0]['title'];
-foreach ($content_array['h1'][0]['h2'] as $h2) {
-    if ($h2['title'] == 'CONFIG') {
-        foreach ($h2['h3'] as $h3) {
-            if ($h3['title'] == 'title') {
-                $config['title'] = strip_tags($h3['content']);
+$config['title'] = $content['title'];
+foreach ($data_array['h1'] as $h1) {
+    if ($h1['title'] == 'CONFIG') {
+        foreach ($h1['h2'] as $h2) {
+            if ($h2['title'] == 'title') {
+                $config['title'] = strip_tags($h2['content']);
             }
-            if ($h3['title'] == 'icon') {
-                $config['icon'] = strip_tags($h3['content']);
+            if ($h2['title'] == 'icon') {
+                $config['icon'] = strip_tags($h2['content']);
             }
-            if ($h3['title'] == 'keywords') {
-                $config['keywords'] = strip_tags($h3['content']);
+            if ($h2['title'] == 'keywords') {
+                $config['keywords'] = strip_tags($h2['content']);
             }
-            if ($h3['title'] == 'header') {
-                foreach ($h3['h4'] as $h4) {
-                    if ($h4['title'] == 'logo') {
-                        $config['header']['logo'] = $h4['content'];
-                    }
-                    if ($h4['title'] == 'nav') {
-                        $config['header']['nav'] = $h4['content'];
-                    }
-                }
+            if ($h2['title'] == 'mode') {
+                $config['mode'] = strip_tags($h2['content']);
             }
-            if ($h3['title'] == 'ending') {
-                foreach ($h3['h4'] as $h4) {
-                    if ($h4['title'] == 'left') {
-                        $config['ending']['left'] = $h4['content'];
+            if ($h2['title'] == 'header') {
+                foreach ($h2['h3'] as $h3) {
+                    if ($h3['title'] == 'logo') {
+                        $config['header']['logo'] = $h3['content'];
                     }
-                    if ($h4['title'] == 'center') {
-                        $config['ending']['center'] = $h4['content'];
-                    }
-                    if ($h4['title'] == 'right') {
-                        $config['ending']['right'] = $h4['content'];
+                    if ($h3['title'] == 'nav') {
+                        $config['header']['nav'] = $h3['content'];
                     }
                 }
             }
-            if ($h3['title'] == 'footer') {
-                $config['footer'] = $h3['content'];
+            if ($h2['title'] == 'ending') {
+                foreach ($h2['h3'] as $h3) {
+                    if ($h3['title'] == 'left') {
+                        $config['ending']['left'] = $h3['content'];
+                    }
+                    if ($h3['title'] == 'center') {
+                        $config['ending']['center'] = $h3['content'];
+                    }
+                    if ($h3['title'] == 'right') {
+                        $config['ending']['right'] = $h3['content'];
+                    }
+                }
+            }
+            if ($h2['title'] == 'footer') {
+                $config['footer'] = $h2['content'];
             }
         }
     }
@@ -103,38 +108,46 @@ if ($config['header']) {
         <main>
             <div class="container">
                 <?php
-echo $content_array['h1'][0]['content'];
-foreach ($content_array['h1'][0]['h2'] as $i => $h2) {
-    if ($h2['title'] != 'CONFIG') {
-        echo '<div id="' . $h2['title'] . '" class="unit">';
-        echo '<h2 class="wow animate__animated animate__bounceIn">';
-        echo $h2['title'];
-        echo '</h2>';
-        echo '<div class="wow animate__animated animate__zoomInDown">';
-        echo $h2['content'];
-        echo '</div>';
-        echo '<div class="cards">';
-        if (is_array($h2['h3'])) {
-            $n = count($h2['h3']);
-            foreach ($h2['h3'] as $h3) {
-                echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
-                echo '<h3>' . $h3['title'] . '</h3>';
-                echo $h3['content'];
-                echo '<p>';
-                foreach ($h3['h4'] as $h4) {
-                    $h4_json = json_encode($h4);
-                    echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
-                    echo $h4['title'] . '&nbsp;';
-                    echo "</a>";
+if ($config['mode'] == 'text') {
+    echo '<h1>';
+    echo $content['title'];
+    echo '</h1>';
+    echo $content['others'];
+} else {
+    echo $content['content'];
+    foreach ($content['h2'] as $i => $h2) {
+        if ($h2['title'] != 'CONFIG') {
+            echo '<div id="' . $h2['title'] . '" class="unit">';
+            echo '<h2 class="wow animate__animated animate__bounceIn">';
+            echo $h2['title'];
+            echo '</h2>';
+            echo '<div class="wow animate__animated animate__zoomInDown">';
+            echo $h2['content'];
+            echo '</div>';
+            echo '<div class="cards">';
+            if (is_array($h2['h3'])) {
+                $n = count($h2['h3']);
+                foreach ($h2['h3'] as $h3) {
+                    echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
+                    echo '<h3>' . $h3['title'] . '</h3>';
+                    echo $h3['content'];
+                    echo '<p>';
+                    foreach ($h3['h4'] as $h4) {
+                        $h4_json = json_encode($h4);
+                        echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
+                        echo $h4['title'] . '&nbsp;';
+                        echo "</a>";
+                    }
+                    echo '</p>';
+                    echo '</div>';
                 }
-                echo '</p>';
-                echo '</div>';
             }
+            echo '</div>';
+            echo '</div>';
         }
-        echo '</div>';
-        echo '</div>';
     }
 }
+
 ?>
             </div>
         </main>
