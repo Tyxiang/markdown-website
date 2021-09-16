@@ -169,8 +169,5 @@ pop description
 
 
 
-# CONFIG
+# Config
 
-## mode
-
-show

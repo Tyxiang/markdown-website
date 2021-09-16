@@ -1,42 +1,22 @@
 <?php
-// data file = content data + config data
-// config file = config data
+// data = docu + config
 ini_set("display_errors", "Off");
 date_default_timezone_set("Asia/Shanghai");
-include "module/Parsedown.php";
-include "module/heading-array.php";
-include "module/function.php";
-$Parsedown = new Parsedown();
-$data_dir = "data/";
-//// config file
-$config_file_name = "config.md";
-if ($_GET["c"]) {
-    $config_file_name = $_GET["c"] . ".md";
+include "module/data.php";
+$file_dir = "file/";
+$data = array();
+//// default config
+$default_config_filename = "default-config.md";
+$default_config_path = $file_dir . $default_config_filename;
+$data = update_data($default_config_path, $data);
+//// data
+$data_filename = "index.md"; // default data file
+if ($_GET["f"]) {
+    $data_filename = $_GET["f"] . ".md";
 }
-$config_path = $data_dir . $config_file_name;
-if (file_exists($config_path)) {
-    $config_md = file_get_contents($config_path);
-    $config_html = $Parsedown->text($config_md);
-    $config_array = heading_parse($config_html);
-    $config = array();
-    $config = update_config($config_array, $config);
-}
-//// data file
-$data_file_name = "index.md"; // default
-if ($_GET["d"]) {
-    $data_file_name = $_GET["d"] . ".md";
-}
-$data_path = $data_dir . $data_file_name;
-if (file_exists($data_path)) {
-    $data_md = file_get_contents($data_path);
-    $data_html = $Parsedown->text($data_md);
-    $data_array = heading_parse($data_html);
-    $content = array();
-    $content = $data_array['h1'][0];
-    $config['title'] = $content['title'];
-    $config = update_config($data_array, $config);
-}
-// echo json_encode($config, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+$data_path = $file_dir . $data_filename;
+$data = update_data($data_path, $data);
+// echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 // exit();
 ?>
 <!DOCTYPE html>
@@ -44,8 +24,8 @@ if (file_exists($data_path)) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="Keywords" Content="<?=$config['keywords']?>">
-        <link rel="shortcut icon" href="<?=$config['icon']?>" />
+        <meta name="Keywords" Content="<?=$data['config']['keywords']?>">
+        <link rel="shortcut icon" href="<?=$data['config']['icon']?>" />
         <link rel="stylesheet" href="css/normalize.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
@@ -54,23 +34,23 @@ if (file_exists($data_path)) {
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
-        <title><?=$config['title'] . '-' . $config['name']?></title>
+        <title><?=$data['config']['title'] . '-' . $data['config']['name']?></title>
     </head>
     <body>
         <?php
-if ($config['header']) {
+if ($data['config']['header']) {
     echo '<header>';
     echo '<div class="container">';
-    if ($config['header']['logo']) {
+    if ($data['config']['header']['logo']) {
         echo '<div id="logo">';
         echo '<a href="index.php">';
-        echo $config['header']['logo'];
+        echo $data['config']['header']['logo'];
         echo '</a>';
         echo '</div>';
     }
-    if ($config['header']['nav']) {
+    if ($data['config']['header']['nav']) {
         echo '<div class="nav">';
-        echo $config['header']['nav'];
+        echo $data['config']['header']['nav'];
         echo '</div>';
     }
     echo '</div>';
@@ -80,75 +60,73 @@ if ($config['header']) {
         <main>
             <div class="container">
                 <?php
-if ($config['mode'] == 'text') {
+if ($data['config']['mode'] == 'text') {
     echo '<h1>';
-    echo $content['title'];
+    echo $data['docu']['title'];
     echo '</h1>';
-    echo $content['others'];
+    echo $data['docu']['content'];
+    echo $data['docu']['others'];
 } else {
-    echo $content['content'];
-    foreach ($content['h2'] as $i => $h2) {
-        if ($h2['title'] != 'CONFIG') {
-            echo '<div id="' . $h2['title'] . '" class="unit">';
-            echo '<h2 class="wow animate__animated animate__bounceIn">';
-            echo $h2['title'];
-            echo '</h2>';
-            echo '<div class="wow animate__animated animate__zoomInDown">';
-            echo $h2['content'];
-            echo '</div>';
-            echo '<div class="cards">';
-            if (is_array($h2['h3'])) {
-                $n = count($h2['h3']);
-                foreach ($h2['h3'] as $h3) {
-                    echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
-                    echo '<h3>' . $h3['title'] . '</h3>';
-                    echo $h3['content'];
-                    echo '<p>';
-                    foreach ($h3['h4'] as $h4) {
-                        $h4_json = json_encode($h4);
-                        echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
-                        echo $h4['title'] . '&nbsp;';
-                        echo "</a>";
-                    }
-                    echo '</p>';
-                    echo '</div>';
+    echo $data['docu']['content'];
+    foreach ($data['docu']['h2'] as $i => $h2) {
+        echo '<div id="' . $h2['title'] . '" class="unit">';
+        echo '<h2 class="wow animate__animated animate__bounceIn">';
+        echo $h2['title'];
+        echo '</h2>';
+        echo '<div class="wow animate__animated animate__zoomInDown">';
+        echo $h2['content'];
+        echo '</div>';
+        echo '<div class="cards">';
+        if (is_array($h2['h3'])) {
+            $n = count($h2['h3']);
+            foreach ($h2['h3'] as $h3) {
+                echo '<div class="card o' . $n . ' wow animate__animated animate__lightSpeedInRight">';
+                echo '<h3>' . $h3['title'] . '</h3>';
+                echo $h3['content'];
+                echo '<p>';
+                foreach ($h3['h4'] as $h4) {
+                    $h4_json = json_encode($h4);
+                    echo "<a href ='javascript:void(0);' onclick ='pop.open(" . $h4_json . ");'>";
+                    echo $h4['title'] . '&nbsp;';
+                    echo "</a>";
                 }
+                echo '</p>';
+                echo '</div>';
             }
-            echo '</div>';
-            echo '</div>';
         }
+        echo '</div>';
+        echo '</div>';
     }
 }
-
 ?>
             </div>
         </main>
         <?php
-if ($config['ending']) {
+if ($data['config']['ending']) {
     echo '<ending>';
     echo '<div class="container">';
-    if ($config['ending']['left']) {
+    if ($data['config']['ending']['left']) {
         echo '<div class="left">';
-        echo $config['ending']['left'];
+        echo $data['config']['ending']['left'];
         echo '</div>';
     }
-    if ($config['ending']['center']) {
+    if ($data['config']['ending']['center']) {
         echo '<div class="center">';
-        echo $config['ending']['center'];
+        echo $data['config']['ending']['center'];
         echo '</div>';
     }
-    if ($config['ending']['right']) {
+    if ($data['config']['ending']['right']) {
         echo '<div class="right">';
-        echo $config['ending']['right'];
+        echo $data['config']['ending']['right'];
         echo '</div>';
     }
     echo '</div>';
     echo '</ending>';
 }
-if ($config['footer']) {
+if ($data['config']['footer']) {
     echo '<footer>';
     echo '<div class="container">';
-    echo $config['footer'];
+    echo $data['config']['footer'];
     echo '</div>';
     echo '</footer>';
 }

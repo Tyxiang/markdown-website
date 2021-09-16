@@ -39,7 +39,7 @@ card description
 
 
 
-# CONFIG
+# Config
 
 ## icon
 
