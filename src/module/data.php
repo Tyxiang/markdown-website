@@ -16,19 +16,19 @@ function update_data($path, $data)
         if ($h1['title'] == 'CONFIG') {
             foreach ($h1['h2'] as $h2) {
                 if ($h2['title'] == 'name') {
-                    $data['config']['name'] = strip_tags($h2['content']);
+                    $data['config']['name'] = trim(strip_tags($h2['content']));
                 }
                 if ($h2['title'] == 'title') {
-                    $data['config']['title'] = strip_tags($h2['content']);
+                    $data['config']['title'] = trim(strip_tags($h2['content']));
                 }
                 if ($h2['title'] == 'icon') {
-                    $data['config']['icon'] = strip_tags($h2['content']);
+                    $data['config']['icon'] = trim(strip_tags($h2['content']));
                 }
                 if ($h2['title'] == 'keywords') {
-                    $data['config']['keywords'] = strip_tags($h2['content']);
+                    $data['config']['keywords'] = trim(strip_tags($h2['content']));
                 }
                 if ($h2['title'] == 'mode') {
-                    $data['config']['mode'] = strip_tags($h2['content']);
+                    $data['config']['mode'] = trim(strip_tags($h2['content']));
                 }
                 if ($h2['title'] == 'header') {
                     $data['config']['header'] = array();

@@ -16,6 +16,9 @@ if ($_GET["f"]) {
 }
 $data_path = $file_dir . $data_filename;
 $data = update_data($data_path, $data);
+if (!$data['config']['title']){
+    $data['config']['title'] = trim($data['docu']['title']);
+}
 // echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 //exit();
 ?>
@@ -34,7 +37,7 @@ $data = update_data($data_path, $data);
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
-        <title><?=$data['config']['title'] . '-' . $data['config']['name']?></title>
+        <title><?=$data['config']['title'] . ' - ' . $data['config']['name']?></title>
     </head>
     <body>
         <?php
