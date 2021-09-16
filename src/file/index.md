@@ -2,7 +2,7 @@
 
 ![banner](image/banner.jpg)
 
-page description
+<center><i>page description</i></center>
 
 ## h2-1
 

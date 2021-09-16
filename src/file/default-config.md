@@ -52,7 +52,6 @@ Simply use markdown files
 to build a website  
 
 ## footer
----
-<br>
+
 Copyright © 2021 forw.cc  
 All rights reserved
