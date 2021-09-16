@@ -1,71 +1,43 @@
 <?php
+// data file = content data + config data
+// config file = config data
 ini_set("display_errors", "Off");
 date_default_timezone_set("Asia/Shanghai");
 include "module/Parsedown.php";
 include "module/heading-array.php";
-$data_dir = "./";
-$data_default = "index.md";
-$data_path = $data_default;
-if ($_GET["f"]) {
-    $data_name = $_GET["f"] . ".md";
-    $data_path = $data_dir . $data_name;
-}
-$data_md = file_get_contents($data_path);
-//echo $data_md;
+include "module/function.php";
 $Parsedown = new Parsedown();
-$data_html = $Parsedown->text($data_md);
-//echo $data_html;
-$data_array = heading_parse($data_html);
-//echo json_encode($data_array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-//exit();
-$content = array();
-$content = $data_array['h1'][0];
-$config = array();
-$config['title'] = $content['title'];
-foreach ($data_array['h1'] as $h1) {
-    if ($h1['title'] == 'CONFIG') {
-        foreach ($h1['h2'] as $h2) {
-            if ($h2['title'] == 'title') {
-                $config['title'] = strip_tags($h2['content']);
-            }
-            if ($h2['title'] == 'icon') {
-                $config['icon'] = strip_tags($h2['content']);
-            }
-            if ($h2['title'] == 'keywords') {
-                $config['keywords'] = strip_tags($h2['content']);
-            }
-            if ($h2['title'] == 'mode') {
-                $config['mode'] = strip_tags($h2['content']);
-            }
-            if ($h2['title'] == 'header') {
-                foreach ($h2['h3'] as $h3) {
-                    if ($h3['title'] == 'logo') {
-                        $config['header']['logo'] = $h3['content'];
-                    }
-                    if ($h3['title'] == 'nav') {
-                        $config['header']['nav'] = $h3['content'];
-                    }
-                }
-            }
-            if ($h2['title'] == 'ending') {
-                foreach ($h2['h3'] as $h3) {
-                    if ($h3['title'] == 'left') {
-                        $config['ending']['left'] = $h3['content'];
-                    }
-                    if ($h3['title'] == 'center') {
-                        $config['ending']['center'] = $h3['content'];
-                    }
-                    if ($h3['title'] == 'right') {
-                        $config['ending']['right'] = $h3['content'];
-                    }
-                }
-            }
-            if ($h2['title'] == 'footer') {
-                $config['footer'] = $h2['content'];
-            }
-        }
-    }
+$data_dir = "data/";
+//// config file
+$config_file_name = "config.md";
+if ($_GET["c"]) {
+    $config_file_name = $_GET["c"] . ".md";
 }
+$config_path = $data_dir . $config_file_name;
+if (file_exists($config_path)) {
+    $config_md = file_get_contents($config_path);
+    $config_html = $Parsedown->text($config_md);
+    $config_array = heading_parse($config_html);
+    $config = array();
+    $config = update_config($config_array, $config);
+}
+//// data file
+$data_file_name = "index.md"; // default
+if ($_GET["d"]) {
+    $data_file_name = $_GET["d"] . ".md";
+}
+$data_path = $data_dir . $data_file_name;
+if (file_exists($data_path)) {
+    $data_md = file_get_contents($data_path);
+    $data_html = $Parsedown->text($data_md);
+    $data_array = heading_parse($data_html);
+    $content = array();
+    $content = $data_array['h1'][0];
+    $config['title'] = $content['title'];
+    $config = update_config($data_array, $config);
+}
+// echo json_encode($config, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+// exit();
 ?>
 <!DOCTYPE html>
 <html class="no-js">
@@ -82,7 +54,7 @@ foreach ($data_array['h1'] as $h1) {
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
-        <title><?=$config['title']?></title>
+        <title><?=$config['title'] . '-' . $config['name']?></title>
     </head>
     <body>
         <?php
