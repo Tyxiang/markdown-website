@@ -16,4 +16,4 @@
 
 ## 4. text mode
 
-[Demo](http://forw.cc/markdown-single-page-web/demo/)
+[Demo](http://forw.cc/markdown-website/demo/)
