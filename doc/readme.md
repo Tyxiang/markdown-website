@@ -1,19 +1,21 @@
 # Manual
 
-## 1. data file
+## 1. 内容
 
-- markdown 格式；
-- 第一个一级标题下的内容将被用作 content；
-- 一级标题 CONFIG 下的内容将被用作 config；
+用 `file/` 中的 markdown 文件定义页面，其中：
 
-## 2. config
+### 1.1. 页面
 
-### 2.1. config file
+- `Default.md` 为默认页面内容；
+- `Config.md` 为默认配置内容；
 
-### 2.2. config heading in data file
+### 1.2. 配置
 
-## 3. show mode
+## 2. 配置
 
-## 4. text mode
+- config heading in data file
+- show mode
+
+## 3. 模式
 
 [Demo](http://forw.cc/markdown-website/demo/)

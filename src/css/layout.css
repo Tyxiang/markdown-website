@@ -8,11 +8,11 @@ header {
 }
 header #logo {
   float: left;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
 }
 header .nav {
   float: right;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 header .nav ul li {
   font-weight: bold;
