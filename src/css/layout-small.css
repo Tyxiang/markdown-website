@@ -2,12 +2,11 @@
   header #logo {
     text-align: center;
     width: 100%;
-    padding: 1.5rem 0;
+    padding-bottom: 1rem;
   }
   header .nav {
     text-align: center;
     width: 100%;
-    padding: 0.5rem 0;
   }
 
   main .subnav {
@@ -26,8 +25,11 @@
   }
 
   .card {
-    width: calc(100% - 2rem);
-    margin: 1rem 1rem;
+    width: calc(100% - 1rem);
+  }
+
+  .text {
+    padding: 1rem;
   }
 
   ending .left {

@@ -51,6 +51,9 @@ if ($data['config']['header']) {
         echo '</a>';
         echo '</div>';
     }
+
+    echo '</div>';
+    echo '<div class="container">';
     if ($data['config']['header']['nav']) {
         echo '<div class="nav">';
         echo $data['config']['header']['nav'];
@@ -64,11 +67,13 @@ if ($data['config']['header']) {
             <div class="container">
                 <?php
 if ($data['config']['mode'] == 'text') {
+    echo '<div class="text">';
     echo '<h1>';
     echo $data['docu']['title'];
     echo '</h1>';
     echo $data['docu']['content'];
     echo $data['docu']['others'];
+    echo '</div>';
 } else {
     echo $data['docu']['content'];
     foreach ($data['docu']['h2'] as $i => $h2) {

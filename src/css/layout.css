@@ -8,11 +8,11 @@ header {
 }
 header #logo {
   float: left;
-  padding: 2rem 0;
+  padding-top: 2.5rem;
 }
 header .nav {
   float: right;
-  padding: 5rem 0 0.5rem 0;
+  padding-bottom: 0.5rem;
 }
 header .nav ul li {
   font-weight: bold;
@@ -86,8 +86,6 @@ main .subnav-content {
   overflow: hidden;
   max-width: 62rem;
   margin: 0 auto;
-  /* text-align: center; */
-  /* background-color: red; */
 }
 
 .unit {
