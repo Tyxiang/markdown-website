@@ -34,14 +34,14 @@ text
 
 ## ending
 
-### left
+### left-1
 
 - [page](index.php?f=page)
 - [unit](index.php?f=unit)
 - [card](index.php?f=card)
 - [pop](index.php?f=pop)
 
-### center
+### left-2
 
 - [header](index.php?f=header)
 - [footer](index.php?f=footer)

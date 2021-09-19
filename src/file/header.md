@@ -10,8 +10,9 @@
 
 ### nav
 
-- [index](index.php)
-- [default-config](index.php?f=default-config)
+- [Show](index.php)
+- [Text](index.php?f=text)
+- [config](index.php?f=config)
 
 ## ending
 

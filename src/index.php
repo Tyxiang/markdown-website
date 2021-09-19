@@ -113,14 +113,19 @@ if ($data['config']['mode'] == 'text') {
 if ($data['config']['ending']) {
     echo '<ending>';
     echo '<div class="container">';
-    if ($data['config']['ending']['left']) {
-        echo '<div class="left">';
-        echo $data['config']['ending']['left'];
+    if ($data['config']['ending']['left-1']) {
+        echo '<div class="left-1">';
+        echo $data['config']['ending']['left-1'];
         echo '</div>';
     }
-    if ($data['config']['ending']['center']) {
-        echo '<div class="center">';
-        echo $data['config']['ending']['center'];
+    if ($data['config']['ending']['left-2']) {
+        echo '<div class="left-2">';
+        echo $data['config']['ending']['left-2'];
+        echo '</div>';
+    }
+    if ($data['config']['ending']['left-3']) {
+        echo '<div class="left-3">';
+        echo $data['config']['ending']['left-3'];
         echo '</div>';
     }
     if ($data['config']['ending']['right']) {

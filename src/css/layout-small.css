@@ -32,10 +32,7 @@
     padding: 1rem;
   }
 
-  ending .left {
-    width: 100%;
-  }
-  ending .center {
+  ending .left-1, .left-2, .left-3 {
     width: 100%;
   }
   ending .right {

@@ -2,7 +2,6 @@
 include "Parsedown.php";
 include "heading-array.php";
 
-// $data 中已经有的值会被保留
 function update_data($path, $data)
 {
     if (!file_exists($path)) {
@@ -14,6 +13,7 @@ function update_data($path, $data)
     $data_array = heading_parse($data_html);
     foreach ($data_array['h1'] as $h1) {
         if ($h1['title'] == 'CONFIG') {
+        // {"a":1, "b":2} + {"b":3, "c":4} = {"a":1, "b":3, "c":4}
             foreach ($h1['h2'] as $h2) {
                 if ($h2['title'] == 'name') {
                     $data['config']['name'] = trim(strip_tags($h2['content']));
@@ -44,11 +44,14 @@ function update_data($path, $data)
                 if ($h2['title'] == 'ending') {
                     $data['config']['ending'] = array();
                     foreach ($h2['h3'] as $h3) {
-                        if ($h3['title'] == 'left') {
-                            $data['config']['ending']['left'] = $h3['content'];
+                        if ($h3['title'] == 'left-1') {
+                            $data['config']['ending']['left-1'] = $h3['content'];
                         }
-                        if ($h3['title'] == 'center') {
-                            $data['config']['ending']['center'] = $h3['content'];
+                        if ($h3['title'] == 'left-2') {
+                            $data['config']['ending']['left-2'] = $h3['content'];
+                        }
+                        if ($h3['title'] == 'left-3') {
+                            $data['config']['ending']['left-3'] = $h3['content'];
                         }
                         if ($h3['title'] == 'right') {
                             $data['config']['ending']['right'] = $h3['content'];
@@ -60,8 +63,10 @@ function update_data($path, $data)
                 }
             }
         } else {
+        // {"a":1, "b":2} + {"b":3, "c":4} = {"b":3, "c":4}
             $data['docu'] = $h1;
         }
     }
     return $data;
 }
+

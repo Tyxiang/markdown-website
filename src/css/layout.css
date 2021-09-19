@@ -139,21 +139,15 @@ ending ul,
 p {
   margin-bottom: 0;
 }
-ending .left {
+ending .left-1, .left-2, .left-3 {
   float: left;
-  width: 25%;
+  width: 15%;
   text-align: left;
-  padding: 1rem 1rem;
-}
-ending .center {
-  float: left;
-  width: 25%;
-  text-align: center;
   padding: 1rem 1rem;
 }
 ending .right {
   float: right;
-  width: 50%;
+  /* width: 50%; */
   text-align: right;
   padding: 1rem 1rem;
 }
