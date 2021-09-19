@@ -80,14 +80,20 @@ title
 
 `?f={filename}`
 
-## 4. 模式
+## 4. 渲染模式
 
 ### 4.1. show
 
-- page
-- unit
-- card
-- pop
+| Markdown   | Web              | Other |
+| ---------- | ---------------- | ----- |
+| h1         | html head title  |       |
+| h1 content | page description |       |
+| h2         | unit             |       |
+| h2 content | unit description |       |
+| h3         | card             |       |
+| h3 content | card description |       |
+| h4         | pop              |       |
+| h4 content | pop description  |       |
 
 [Demo](http://forw.cc/markdown-website/demo/)
 
