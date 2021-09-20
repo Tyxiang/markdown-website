@@ -1,6 +1,6 @@
 # Markdown Website
 
-Build a website by markdown.
+Build a website by markdown files.
 
 Web like:
 
