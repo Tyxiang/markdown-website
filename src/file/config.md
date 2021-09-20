@@ -28,9 +28,9 @@ text
 
 ### nav
 
-- [All](index.php)
-- [Ucp](index.php?f=ucp)
-- [Text](index.php?f=text)
+- [all](index.php)
+- [ucp](index.php?f=ucp)
+- [text](index.php?f=text)
 - [config](index.php?f=config)
 
 ## ending
