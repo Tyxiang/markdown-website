@@ -80,7 +80,7 @@ if ($data['config']['mode'] == 'text') {
     echo '</div>';
 } 
 if ($data['config']['mode'] == 'ucp') {
-    echo '<div class="upc">';
+    echo '<div class="ucp">';
     echo $data['docu']['content'];
     foreach ($data['docu']['h2'] as $i => $h2) {
         echo '<div id="' . $h2['title'] . '" class="unit">';

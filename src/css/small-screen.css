@@ -24,11 +24,13 @@
     padding: 0;
   }
 
-  .card {
+  .ucp .card {
     width: calc(100% - 1rem);
   }
 
-  ending .left-1, .left-2, .left-3 {
+  ending .left-1,
+  ending .left-2,
+  ending .left-3 {
     width: 100%;
   }
   ending .right {

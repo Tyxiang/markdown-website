@@ -107,7 +107,9 @@ ending ul,
 p {
   margin-bottom: 0;
 }
-ending .left-1, .left-2, .left-3 {
+ending .left-1,
+ending .left-2,
+ending .left-3 {
   float: left;
   width: 15%;
   text-align: left;
@@ -138,7 +140,4 @@ footer a {
 footer a:hover {
   color: var(--color-primary-darker);
 }
-footer ul,
-p {
-  margin-bottom: 0;
-}
+
