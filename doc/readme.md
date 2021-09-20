@@ -124,13 +124,14 @@ All rights reserved
 
 [Demo](http://forw.cc/markdown-website/demo/?f=footer)
 
-## 3. 指定数据文件
+## 3. 访问特定数据文件
 
-`?f={filename}`
+- `?f={filename}`
+- `?f={dir}/{filename}`
 
 ## 4. 渲染模式
 
-### 4.1. show
+### 4.1. `show` 
 
 以 unit/card/pop（ucp）方式渲染：
 
@@ -147,6 +148,6 @@ All rights reserved
 
 [Demo](http://forw.cc/markdown-website/demo/)
 
-### 4.2. text
+### 4.2. `text`
 
 [Demo](http://forw.cc/markdown-website/demo/?f=text)
