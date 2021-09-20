@@ -19,7 +19,7 @@
 
 ### left-3
 
-- [Show](index.php)
+- [Ucp](index.php)
 - [Text](index.php?f=text)
 - [config](index.php?f=config)
 

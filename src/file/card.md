@@ -38,11 +38,8 @@ card description
 
 
 
-
 # CONFIG
 
 ## mode
 
 ucp
-
-## footer

@@ -1,4 +1,4 @@
-# default
+# config
 
 File not found!
 
@@ -28,7 +28,7 @@ text
 
 ### nav
 
-- [Show](index.php)
+- [Ucp](index.php)
 - [Text](index.php?f=text)
 - [config](index.php?f=config)
 
@@ -49,10 +49,8 @@ text
 
 ### right
 
-Simply use markdown files   
-to build a website  
+Simply use markdown files to build a website  
+<br>
+Copyright © 2021 [forw.cc](http://forw.cc)   
+All rights reserved  
 
-## footer
-
-Copyright © 2021 [forw.cc](http://forw.cc)  
-All rights reserved

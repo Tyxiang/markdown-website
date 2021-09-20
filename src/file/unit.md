@@ -21,5 +21,3 @@ unit description
 ## mode
 
 ucp
-
-## footer
