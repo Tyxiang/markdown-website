@@ -2,7 +2,7 @@
 
 Build a website by markdown.
 
-Web like this:
+Web like:
 
 ![](image/snap.png)
 
