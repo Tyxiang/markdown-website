@@ -60,7 +60,7 @@ upc
 
 可选项：
 
-- `upc`
+- `ucp`
 - `text` 默认；
 
 ### 2.6. header
@@ -131,7 +131,7 @@ All rights reserved
 
 ## 4. 渲染模式
 
-### 4.1. `show` 
+### 4.1. `ucp` 
 
 以 unit/card/pop (ucp) 方式渲染：  
 

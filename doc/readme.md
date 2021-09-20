@@ -60,7 +60,7 @@ upc
 
 Optional items:
 
-- `upc`
+- `ucp`
 - `text` 默认；
 
 ### 2.6. Header
@@ -131,7 +131,7 @@ All rights reserved
 
 ## 4. Rendering Mode
 
-### 4.1. `show`
+### 4.1. `ucp`
 
 Render in unit/card/pop (ucp) mode:
 
