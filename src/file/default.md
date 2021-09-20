@@ -19,3 +19,12 @@
 - [header](index.php?f=header)
 - [footer](index.php?f=footer)
 - [ending](index.php?f=ending)
+
+
+
+
+# CONFIG
+
+## title
+
+all
