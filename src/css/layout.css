@@ -118,6 +118,10 @@ main .subnav-content {
   width: calc(20% - 1rem);
 }
 
+.text {
+  padding: 1rem;
+}
+
 ending {
   /*首位必须为0，否则footer异常*/
   flex: 0 0 auto;

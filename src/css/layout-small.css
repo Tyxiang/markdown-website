@@ -28,10 +28,6 @@
     width: calc(100% - 1rem);
   }
 
-  .text {
-    padding: 1rem;
-  }
-
   ending .left-1, .left-2, .left-3 {
     width: 100%;
   }
