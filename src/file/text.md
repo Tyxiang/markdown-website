@@ -55,13 +55,13 @@ markdown website md web site
 ```markdown
 ## mode
 
-show
+upc
 ```
 
 可选项：
 
-- `show`
-- `text`
+- `upc`
+- `text` 默认；
 
 ### 2.6. header
 
@@ -133,7 +133,7 @@ All rights reserved
 
 ### 4.1. `show` 
 
-以 unit/card/pop 方式渲染：  
+以 unit/card/pop (ucp) 方式渲染：  
 
 | Markdown   | Web              |
 | ---------- | ---------------- |
@@ -151,6 +151,8 @@ All rights reserved
 ### 4.2. `text`
 
 [Demo](http://forw.cc/markdown-website/demo/?f=text)
+
+
 
 
 # CONFIG
