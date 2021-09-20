@@ -10,7 +10,8 @@
 
 ### nav
 
-- [Ucp](index.php)
+- [All](index.php)
+- [Ucp](index.php?f=ucp)
 - [Text](index.php?f=text)
 - [config](index.php?f=config)
 

@@ -28,7 +28,8 @@ text
 
 ### nav
 
-- [Ucp](index.php)
+- [All](index.php)
+- [Ucp](index.php?f=ucp)
 - [Text](index.php?f=text)
 - [config](index.php?f=config)
 
@@ -49,7 +50,7 @@ text
 
 ### right
 
-Simply use markdown files to build a website  
+Build a website by markdown files  
 <br>
 Copyright © 2021 [forw.cc](http://forw.cc)   
 All rights reserved  

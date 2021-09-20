@@ -19,14 +19,17 @@
 
 ### left-3
 
-- [Ucp](index.php)
+- [All](index.php)
+- [Ucp](index.php?f=ucp)
 - [Text](index.php?f=text)
 - [config](index.php?f=config)
 
 ### right
 
-Simply use markdown files to build  
-a single page web page.
+Build a website by markdown files  
+<br>
+Copyright © 2021 [forw.cc](http://forw.cc)   
+All rights reserved  
 
 ## header
 ## footer

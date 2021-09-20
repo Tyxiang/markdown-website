@@ -1,108 +1,21 @@
-# h1
+# Demo
 
-![banner](image/banner.jpg)
+##
 
-<center><i>page description</i></center>
+- [All](index.php)
+- [Ucp](index.php?f=ucp)
+- [Text](index.php?f=text)
+- [config](index.php?f=config)
 
-## h2-1
+##
 
-![](image/shirt.svg)
+- [page](index.php?f=page)
+- [unit](index.php?f=unit)
+- [card](index.php?f=card)
+- [pop](index.php?f=pop)
 
-unit description
+##
 
-## h2-2
-
-###
-
-![](image/teacher.svg)
-
-card description
-
-## h2-3
-
-unit description
-
-### h3-1
-
-![](image/record.svg)
-
-card description
-
-### h3-2
-
-![](image/record.svg)
-
-card description
-
-## h2-4
-
-unit description
-
-### h3-1
-
-![](image/cart.svg)
-
-card description
-
-- item
-  <br>
-  <br>
-  <br>
-
-#### h4
-
-![](image/record.svg)
-
-pop description
-
-- item
-- item
-
-### h3-2
-
-![](image/cart.svg)
-
-card description
-
-- item
-- item
-  <br>
-  <br>
-
-#### h4
-
-![](image/record.svg)
-
-pop description
-
-- item
-- item
-
-### h3-3
-
-![](image/cart.svg)
-
-card description
-
-- item
-- item
-- item
-
-#### h4
-
-![](image/record.svg)
-
-pop description
-
-- item
-- item
-
-
-
-
-
-# CONFIG
-
-## mode
-
-ucp
+- [header](index.php?f=header)
+- [footer](index.php?f=footer)
+- [ending](index.php?f=ending)
