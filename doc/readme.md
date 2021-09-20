@@ -55,13 +55,13 @@ markdown website md web site
 ```markdown
 ## mode
 
-show
+upc
 ```
 
 可选项：
 
-- `show`
-- `text`
+- `upc`
+- `text` 默认；
 
 ### 2.6. header
 

@@ -32,9 +32,10 @@ if (!$data['config']['title']){
         <link rel="stylesheet" href="css/normalize.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
-        <link rel="stylesheet" href="css/github-markdown.css" type="text/css">
         <link rel="stylesheet" href="css/layout.css" type="text/css">
-        <link rel="stylesheet" href="css/layout-small.css" type="text/css">
+        <link rel="stylesheet" href="css/small-screen.css" type="text/css">
+        <link rel="stylesheet" href="css/text.css" type="text/css">
+        <link rel="stylesheet" href="css/ucp.css" type="text/css">
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
         <link rel="stylesheet" href="css/pop.min.css" type="text/css">
         <title><?=$data['config']['title'] . ' - ' . $data['config']['name']?></title>
@@ -66,6 +67,9 @@ if ($data['config']['header']) {
         <main>
             <div class="container">
                 <?php
+if (!$data['config']['mode']) {
+    $data['config']['mode'] = 'text';
+}
 if ($data['config']['mode'] == 'text') {
     echo '<div class="text">';
     echo '<h1>';
@@ -74,7 +78,9 @@ if ($data['config']['mode'] == 'text') {
     echo $data['docu']['content'];
     echo $data['docu']['others'];
     echo '</div>';
-} else {
+} 
+if ($data['config']['mode'] == 'upc') {
+    echo '<div class="upc">';
     echo $data['docu']['content'];
     foreach ($data['docu']['h2'] as $i => $h2) {
         echo '<div id="' . $h2['title'] . '" class="unit">';
@@ -105,6 +111,7 @@ if ($data['config']['mode'] == 'text') {
         echo '</div>';
         echo '</div>';
     }
+    echo '</div>';
 }
 ?>
             </div>

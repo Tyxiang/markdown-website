@@ -22,3 +22,16 @@ body {
   flex-direction: column;
   height: 100%;
 }
+
+a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+  background: transparent;
+}
+a:hover {
+  color: var(--color-accent-light);
+}
+
+img {
+  max-width: 100%;
+}

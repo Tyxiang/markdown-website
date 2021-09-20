@@ -101,6 +101,6 @@ pop description
 
 ## mode
 
-show
+upc
 
 ## footer
