@@ -55,7 +55,7 @@ markdown website md web site
 ```markdown
 ## mode
 
-upc
+ucp
 ```
 
 可选项：
