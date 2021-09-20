@@ -20,6 +20,6 @@ unit description
 
 ## mode
 
-show
+ucp
 
 ## footer

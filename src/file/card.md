@@ -43,6 +43,6 @@ card description
 
 ## mode
 
-show
+ucp
 
 ## footer

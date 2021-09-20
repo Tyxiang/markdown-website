@@ -11,6 +11,6 @@ page description
 
 ## mode
 
-show
+ucp
 
 ## footer

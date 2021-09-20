@@ -36,6 +36,6 @@ pop description
 
 ## mode
 
-show
+ucp
 
 ## footer
