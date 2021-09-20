@@ -32,7 +32,7 @@ if (!$data['config']['title']){
         <link rel="stylesheet" href="css/normalize.css" type="text/css">
         <link rel="stylesheet" href="css/basic.css" type="text/css">
         <link rel="stylesheet" href="css/color.css" type="text/css">
-        <link rel="stylesheet" href="css/content.css" type="text/css">
+        <link rel="stylesheet" href="css/github-markdown.css" type="text/css">
         <link rel="stylesheet" href="css/layout.css" type="text/css">
         <link rel="stylesheet" href="css/layout-small.css" type="text/css">
         <link rel="stylesheet" href="css/animate.min.css" type="text/css">
