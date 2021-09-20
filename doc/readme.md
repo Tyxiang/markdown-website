@@ -133,7 +133,7 @@ All rights reserved
 
 ### 4.1. `show` 
 
-以 unit/card/pop（ucp）方式渲染：
+以 unit/card/pop 方式渲染：  
 
 | Markdown   | Web              |
 | ---------- | ---------------- |
