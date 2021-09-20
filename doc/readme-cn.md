@@ -1,18 +1,18 @@
-# Manual
+# 说明
 
-## 1. Data File
+## 1. 数据文件
 
-- The markdown data file used to define the page is placed under `file/`;
-- In the data file, `# CONFIG` is the configuration content, and the other heading 1 is the page content;
-- `file/Config.md` is the default configuration file;
-- `file/Default.md` is the default page file;
-- `file/xxx.md` is other page file;
-- The page content in the data file will replace the page content in `file/Config.md`;
-- The configuration content in the data file will update the configuration content in `file/Config.md`;
+- 用来定义页面的 markdown 数据文件放在 `file/` 下；
+- 数据文件中 `# CONFIG` 下为配置内容，其他一级标题为页面内容；
+- `file/Config.md` 为默认配置文件；
+- `file/Default.md` 为默认页面文件；
+- `file/xxx.md` 为其他页面文件；
+- 数据文件中的页面内容会替换 `file/Config.md` 中的页面内容；
+- 数据文件中的配置内容会更新 `file/Config.md` 中的配置内容；
 
-## 2. Configuration Item
+## 2. 配置项
 
-### 2.1. Website Name
+### 2.1. 网站名称
 
 ```markdown
 ## name
@@ -20,7 +20,7 @@
 website name
 ```
 
-### 2.2. Page Title
+### 2.2. 页面标题
 
 ```markdown
 ## title
@@ -28,13 +28,13 @@ website name
 page title
 ```
 
-Title priority from low to high:
+标题优先级从低到高：
 
-1. `# CONFIG ## title` in `Config.md`;
-1. `# {title}` of the page content in `file/xxx.md`;
-1. `# CONFIG ## title` of the configuration content in `file/xxx.md`;
+1. `Config.md` 中的 `# CONFIG ## title`；
+1. `file/xxx.md` 中，页面内容的 `# {title}`；
+1. `file/xxx.md` 中，配置内容的 `# CONFIG ## title`；
 
-### 2.3. Favicon
+### 2.3. 标题栏图标
 
 ```markdown
 ## icon
@@ -42,7 +42,7 @@ Title priority from low to high:
 `image/f.ico`
 ```
 
-### 2.4. Page Keywords
+### 2.4. 页面关键词
 
 ```markdown
 ## keywords
@@ -50,7 +50,7 @@ Title priority from low to high:
 markdown website md web site
 ```
 
-### 2.5. Rendering Mode
+### 2.5. 渲染模式
 
 ```markdown
 ## mode
@@ -58,12 +58,12 @@ markdown website md web site
 upc
 ```
 
-Optional items:
+可选项：
 
 - `upc`
 - `text` 默认；
 
-### 2.6. Header
+### 2.6. header
 
 ```markdown
 ## header
@@ -81,7 +81,7 @@ Optional items:
 
 [Demo](http://forw.cc/markdown-website/demo/?f=header)
 
-### 2.7. Ending
+### 2.7. ending
 
 ```markdown
 ## ending
@@ -113,7 +113,7 @@ to build a website
 
 [Demo](http://forw.cc/markdown-website/demo/?f=ending)
 
-### 2.8. Footer
+### 2.8. footer
 
 ```markdown
 ## footer
@@ -124,16 +124,16 @@ All rights reserved
 
 [Demo](http://forw.cc/markdown-website/demo/?f=footer)
 
-## 3. Access Specific Data File
+## 3. 访问特定数据文件
 
 - `?f={filename}`
 - `?f={dir}/{filename}`
 
-## 4. Rendering Mode
+## 4. 渲染模式
 
-### 4.1. `show`
+### 4.1. `show` 
 
-Render in unit/card/pop (ucp) mode:
+以 unit/card/pop (ucp) 方式渲染：  
 
 | Markdown   | Web              |
 | ---------- | ---------------- |
