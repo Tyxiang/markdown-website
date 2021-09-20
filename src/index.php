@@ -6,11 +6,11 @@ include "module/data.php";
 $file_dir = "file/";
 $data = array();
 //// default config
-$config_filename = "Config.md";
+$config_filename = "config.md";
 $config_path = $file_dir . $config_filename;
 $data = update_data($config_path, $data);
 //// data
-$data_filename = "Default.md"; // default data file
+$data_filename = "default.md"; // default data file
 if ($_GET["f"]) {
     $data_filename = $_GET["f"] . ".md";
 }
