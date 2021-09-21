@@ -109,9 +109,10 @@ p {
 }
 ending .left-1,
 ending .left-2,
-ending .left-3 {
+ending .left-3,
+ending .left-4 {
   float: left;
-  width: 15%;
+  width: 16%;
   text-align: left;
   padding: 1rem 1rem;
 }
@@ -121,13 +122,18 @@ ending .right {
   text-align: right;
   padding: 1rem 1rem;
 }
+ending ol,
+ending ul {
+  padding-top: 0.3rem;
+  padding-left: 1rem;
+}
 
 footer {
   /*首位必须为0，否则footer异常*/
   flex: 0 0 auto;
   background: var(--color-primary);
   color: var(--color-primary-light);
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   font-size: 0.9rem;
   text-align: center;
   /* margin: 1rem 0 0 0; */

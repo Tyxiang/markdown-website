@@ -4,11 +4,11 @@
 
 - The markdown data file used to define the page is placed under `file/`;
 - In the data file, `# CONFIG` is the configuration content, and the other heading 1 is the page content;
-- `file/Config.md` is the default configuration file;
-- `file/Default.md` is the default page file;
+- `file/config.md` is the default configuration file;
+- `file/default.md` is the default page file;
 - `file/xxx.md` is other page file;
-- The page content in the data file will replace the page content in `file/Config.md`;
-- The configuration content in the data file will update the configuration content in `file/Config.md`;
+- The page content in the data file will replace the page content in `file/config.md`;
+- The configuration content in the data file will update the configuration content in `file/config.md`;
 
 ## 2. Configuration Item
 
@@ -74,9 +74,9 @@ Optional items:
 
 ### nav
 
-- [Show](index.php)
-- [Text](index.php?f=text)
-- [config](index.php?f=config)
+- [all](index.php)
+- [ucp](index.php?f=ucp)
+- [text](index.php?f=text)
 ```
 
 [Demo](http://forw.cc/markdown-website/demo/?f=header)
@@ -88,27 +88,37 @@ Optional items:
 
 ### left-1
 
-- [page](index.php?f=page)
-- [unit](index.php?f=unit)
-- [card](index.php?f=card)
-- [pop](index.php?f=pop)
+**demo**
+
+- [ucp](index.php?f=ucp)
+- [text](index.php?f=text)
 
 ### left-2
+
+**config**
+
+- [config](index.php?f=config)
+
+### left-3
+
+**config detail**
 
 - [header](index.php?f=header)
 - [footer](index.php?f=footer)
 - [ending](index.php?f=ending)
 
-### left-3
+### left-4
 
-- [Show](index.php)
-- [Text](index.php?f=text)
-- [config](index.php?f=config)
+**ucp detail**
+
+- [page](index.php?f=page)
+- [unit](index.php?f=unit)
+- [card](index.php?f=card)
+- [pop](index.php?f=pop)
 
 ### right
 
-Simply use markdown files  
-to build a website
+Build a website by markdown files  
 ```
 
 [Demo](http://forw.cc/markdown-website/demo/?f=ending)
@@ -118,8 +128,9 @@ to build a website
 ```markdown
 ## footer
 
-Copyright © 2021 forw.cc  
-All rights reserved
+---
+Copyright © 2021 [forw.cc](http://forw.cc)   
+All rights reserved 
 ```
 
 [Demo](http://forw.cc/markdown-website/demo/?f=footer)
@@ -146,7 +157,7 @@ Render in unit/card/pop (ucp) mode:
 | h4         | pop              |
 | h4 content | pop description  |
 
-[Demo](http://forw.cc/markdown-website/demo/)
+[Demo](http://forw.cc/markdown-website/demo/?f=ucp)
 
 ### 4.2. `text`
 

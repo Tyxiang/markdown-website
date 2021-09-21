@@ -4,11 +4,11 @@
 
 - 用来定义页面的 markdown 数据文件放在 `file/` 下；
 - 数据文件中 `# CONFIG` 下为配置内容，其他一级标题为页面内容；
-- `file/Config.md` 为默认配置文件；
-- `file/Default.md` 为默认页面文件；
+- `file/config.md` 为默认配置文件；
+- `file/default.md` 为默认页面文件；
 - `file/xxx.md` 为其他页面文件；
-- 数据文件中的页面内容会替换 `file/Config.md` 中的页面内容；
-- 数据文件中的配置内容会更新 `file/Config.md` 中的配置内容；
+- 数据文件中的页面内容会替换 `file/config.md` 中的页面内容；
+- 数据文件中的配置内容会更新 `file/config.md` 中的配置内容；
 
 ## 2. 配置项
 
@@ -74,52 +74,63 @@ ucp
 
 ### nav
 
-- [Show](index.php)
-- [Text](index.php?f=text)
-- [config](index.php?f=config)
+- [all](index.php)
+- [ucp](index.php?f=ucp)
+- [text](index.php?f=text)
 ```
 
 [Demo](http://forw.cc/markdown-website/demo/?f=header)
 
-### 2.7. ending
+### 2.7. Ending
 
 ```markdown
 ## ending
 
 ### left-1
 
-- [page](index.php?f=page)
-- [unit](index.php?f=unit)
-- [card](index.php?f=card)
-- [pop](index.php?f=pop)
+**demo**
+
+- [ucp](index.php?f=ucp)
+- [text](index.php?f=text)
 
 ### left-2
+
+**config**
+
+- [config](index.php?f=config)
+
+### left-3
+
+**config detail**
 
 - [header](index.php?f=header)
 - [footer](index.php?f=footer)
 - [ending](index.php?f=ending)
 
-### left-3
+### left-4
 
-- [Show](index.php)
-- [Text](index.php?f=text)
-- [config](index.php?f=config)
+**ucp detail**
+
+- [page](index.php?f=page)
+- [unit](index.php?f=unit)
+- [card](index.php?f=card)
+- [pop](index.php?f=pop)
 
 ### right
 
-Simply use markdown files  
-to build a website
+Build a website by markdown files  
 ```
 
 [Demo](http://forw.cc/markdown-website/demo/?f=ending)
 
-### 2.8. footer
+### 2.8. Footer
 
 ```markdown
 ## footer
 
-Copyright © 2021 forw.cc  
-All rights reserved
+---
+Copyright © 2021 [forw.cc](http://forw.cc)   
+All rights reserved  
 ```
 
 [Demo](http://forw.cc/markdown-website/demo/?f=footer)
@@ -146,7 +157,7 @@ All rights reserved
 | h4         | pop              |
 | h4 content | pop description  |
 
-[Demo](http://forw.cc/markdown-website/demo/)
+[Demo](http://forw.cc/markdown-website/demo/?f=ucp)
 
 ### 4.2. `text`
 

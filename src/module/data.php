@@ -53,6 +53,9 @@ function update_data($path, $data)
                         if ($h3['title'] == 'left-3') {
                             $data['config']['ending']['left-3'] = $h3['content'];
                         }
+                        if ($h3['title'] == 'left-4') {
+                            $data['config']['ending']['left-4'] = $h3['content'];
+                        }
                         if ($h3['title'] == 'right') {
                             $data['config']['ending']['right'] = $h3['content'];
                         }
