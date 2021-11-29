@@ -32,8 +32,8 @@ text
 ### nav
 
 - [all](index.php)
-- [ucp](index.php?f=ucp)
-- [text](index.php?f=text)
+- [ucp](index.php?f=demo/ucp)
+- [text](index.php?f=demo/text)
 
 ## ending
 
@@ -41,31 +41,31 @@ text
 
 **demo**
 
-- [ucp](index.php?f=ucp)
-- [text](index.php?f=text)
+- [ucp](index.php?f=demo/ucp)
+- [text](index.php?f=demo/text)
 
 ### left-2
 
 **config**
 
-- [config](index.php?f=config)
+- [config](index.php?f=demo/config)
 
 ### left-3
 
 **config detail**
 
-- [header](index.php?f=header)
-- [footer](index.php?f=footer)
-- [ending](index.php?f=ending)
+- [header](index.php?f=demo/header)
+- [footer](index.php?f=demo/footer)
+- [ending](index.php?f=demo/ending)
 
 ### left-4
 
 **ucp detail**
 
-- [page](index.php?f=page)
-- [unit](index.php?f=unit)
-- [card](index.php?f=card)
-- [pop](index.php?f=pop)
+- [page](index.php?f=demo/page)
+- [unit](index.php?f=demo/unit)
+- [card](index.php?f=demo/card)
+- [pop](index.php?f=demo/pop)
 
 ### right
 
