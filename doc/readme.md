@@ -7,8 +7,7 @@
 - `file/config.md` is the default configuration file;
 - `file/default.md` is the default page file;
 - `file/xxx.md` is other page file;
-- The page content in the data file will replace the page content in `file/config.md`;
-- The configuration content in the data file will update the configuration content in `file/config.md`;
+- The content in the data file has higher priority than the configuration file;
 
 ## 2. Configuration Item
 

@@ -7,8 +7,7 @@
 - `file/config.md` 为默认配置文件；
 - `file/default.md` 为默认页面文件；
 - `file/xxx.md` 为其他页面文件；
-- 数据文件中的页面内容会替换 `file/config.md` 中的页面内容；
-- 数据文件中的配置内容会更新 `file/config.md` 中的配置内容；
+- 数据文件中的内容优先级高于配置文件；
 
 ## 2. 配置项
 
