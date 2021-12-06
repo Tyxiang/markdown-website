@@ -8,8 +8,8 @@ dir_name
 data = doc + config
 doc = main + header + ending + footer
  */
-include "vendor/Parsedown.php";
-include "vendor/heading-array.php";
+include "markdown-website/vendor/Parsedown.php";
+include "markdown-website/vendor/heading-array.php";
 
 ini_set("display_errors", "On");
 date_default_timezone_set("Asia/Shanghai");
@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Shanghai");
 //header('Access-Control-Allow-Headers:X-Requested-With,X_Requested_With');
 
 // config
-$config_file_path = "config.json";
+$config_file_path = "markdown-website/config.json";
 if (file_exists($config_file_path)) {
     $json = file_get_contents($config_file_path);
     $config = json_decode($json, true);
@@ -159,14 +159,14 @@ if (file_exists($meta_file_path)) {
 // exit();
 switch (@$meta["mode"]) {
     case "ucp":
-        include "view/ucp.php";
+        include "markdown-website/view/ucp.php";
         break;
     case "itti":
-        include "view/itti.php";
+        include "markdown-website/view/itti.php";
         break;
     case "text":
-        include "view/text.php";
+        include "markdown-website/view/text.php";
         break;
     default:
-        include "view/text.php";
+        include "markdown-website/view/text.php";
 }
