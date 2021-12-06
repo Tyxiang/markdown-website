@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <?php
-        if (@$header['nav']) {
+        if (isset($header['nav'])) {
             echo '<div class="nav">';
             echo $header['nav'];
             echo '</div>';

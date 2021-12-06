@@ -1,5 +1,5 @@
 <?php
-if ($ending) {
+if (isset($ending)) {
     echo '<ending>';
     echo '<div class="container">';
     if ($ending['left-1']) {

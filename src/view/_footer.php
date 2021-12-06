@@ -1,5 +1,5 @@
 <?php
-if ($footer) {
+if (isset($footer)) {
     echo '<footer>';
     echo '<div class="container">';
     echo $footer;
