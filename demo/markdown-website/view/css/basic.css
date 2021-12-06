@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Droid Sans", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  color: var(--color-gray-darker);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+  background: transparent;
+}
+a:hover {
+  color: var(--color-accent-light);
+}
+
+img {
+  max-width: 100%;
+}

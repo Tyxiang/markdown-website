@@ -1,0 +1,24 @@
+:root {
+  /* color-primary */
+  --primary-h: 219;
+  --color-primary-lighter:  hsl(var(--primary-h), 70%, 95%);
+  --color-primary-light:    hsl(var(--primary-h), 70%, 85%);
+  --color-primary:          hsl(var(--primary-h), 70%, 50%);
+  --color-primary-dark:     hsl(var(--primary-h), 70%, 40%);
+  --color-primary-darker:   hsl(var(--primary-h), 70%, 30%);
+  /* color-accent */
+  /* --accent-h:               calc(var(--primary-h) - 180); */
+  --accent-h: 39;
+  --color-accent-lighter:   hsl(var(--accent-h), 100%, 95%);
+  --color-accent-light:     hsl(var(--accent-h), 100%, 85%);
+  --color-accent:           hsl(var(--accent-h), 100%, 54%);
+  --color-accent-dark:      hsl(var(--accent-h), 100%, 40%);
+  --color-accent-darker:    hsl(var(--accent-h), 100%, 30%);
+  /* color-gray */
+  --gray-h: 0;
+  --color-gray-lighter:     hsl(var(--gray-h), 0%, 95%);
+  --color-gray-light:       hsl(var(--gray-h), 0%, 85%);
+  --color-gray:             hsl(var(--gray-h), 0%, 75%);
+  --color-gray-dark:        hsl(var(--gray-h), 0%, 40%);
+  --color-gray-darker:      hsl(var(--gray-h), 0%, 30%);
+}
