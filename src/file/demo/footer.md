@@ -1,6 +1,0 @@
-# footer
-
-# CONFIG
-
-## header
-## ending
