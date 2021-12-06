@@ -57,8 +57,8 @@ if (isset($main['h1'][0])) {
         ?>
     </body>
 </html>
-<script src="<?$start_dir_path?>markdown-website/view/js/pop.min.js"></script>
-<script src="<?$start_dir_path?>markdown-website/view/js/wow.min.js"></script>
+<script src="<?$start_dir_path?>view/js/pop.min.js"></script>
+<script src="<?$start_dir_path?>view/js/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>
