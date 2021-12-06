@@ -1,5 +1,5 @@
 # footer
 
 ---
-Copyright © 2021 [forw.cc](http://forw.cc)   
+Copyright 2021 [forw.cc](http://forw.cc)   
 All rights reserved

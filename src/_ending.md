@@ -2,6 +2,8 @@
 
 ## left-1
 
+left-1  
+
 - [privacy](privacy.md)
 - [term](term.md)
 

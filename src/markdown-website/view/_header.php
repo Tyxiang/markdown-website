@@ -2,7 +2,7 @@
     <div class="container">
         <div id="logo">
         <a href="default.md">
-            <img src="<?=$start_dir_path?>mdweb/view/logo/logo.png" alt="logo" >
+            <img src="<?=$start_dir_path?>markdown-website/view/logo/logo.png" alt="logo" >
         </a>
         </div>
     </div>

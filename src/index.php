@@ -8,8 +8,8 @@ dir_name
 data = doc + config
 doc = main + header + ending + footer
  */
-include "module/Parsedown.php";
-include "module/heading-array.php";
+include "markdown-website/module/Parsedown.php";
+include "markdown-website/module/heading-array.php";
 
 ini_set("display_errors", "On");
 date_default_timezone_set("Asia/Shanghai");
@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Shanghai");
 //header('Access-Control-Allow-Headers:X-Requested-With,X_Requested_With');
 
 // config
-$config_file_path = "config.json";
+$config_file_path = "markdown-website/config.json";
 if (file_exists($config_file_path)) {
     $json = file_get_contents($config_file_path);
     $config = json_decode($json, true);
@@ -33,28 +33,13 @@ $request_uri = $_SERVER['REQUEST_URI']; // /src/tutorial/default.md, /src/tutori
 $the_same_length = strspn($script_name ^ $request_uri, "\0");
 $start_dir_path = substr($script_name, 0, $the_same_length); // /src/, /src/, /src/
 
-// $script_dir_path = dirname($script_name); // /src, /src, /src
-// $script_dir_path_no_start = ltrim($script_dir_path, $start_dir_path); // "", "", ""
-// $request_dir_path = dirname($request_uri); // /src/tutorial, /src, /src
-// $request_dir_path_no_start = ltrim($request_dir_path, $start_dir_path); // tutorial, "", ""
-
-// server
-// $server_name = $_SERVER['SERVER_NAME']; // fimik.com
-// $server_port = $_SERVER['SERVER_PORT']; // 80
-// if ($server_port == '80') {
-//     $server_address = 'http://' . $server_name . $start_dir_path;
-// } else {
-//     $server_address = 'http://' . $server_name . ':' . $server_port . $start_dir_path;
-// }
-
-chdir('../');
-
 // header
 $doc_header_file_path = "_header.md";
 if (file_exists($doc_header_file_path)) {
     $md = file_get_contents($doc_header_file_path);
     $Parsedown = new Parsedown();
     $html = $Parsedown->text($md);
+    // add start dir path to the front 
     $xml = new DOMDocument('1.0','UTF-8');
     $xml->loadHTML($html);
     foreach($xml->getElementsByTagName('a') as $link) { 
@@ -82,6 +67,7 @@ if (file_exists($doc_ending_file_path)) {
     $md = file_get_contents($doc_ending_file_path);
     $Parsedown = new Parsedown();
     $html = $Parsedown->text($md);
+    // add start dir path to the front 
     $xml = new DOMDocument('1.0','UTF-8');
     $xml->loadHTML($html);
     foreach($xml->getElementsByTagName('a') as $link) { 
@@ -121,6 +107,7 @@ if (file_exists($doc_footer_file_path)) {
     $md = file_get_contents($doc_footer_file_path);
     $Parsedown = new Parsedown();
     $html = $Parsedown->text($md);
+    // add start dir path to the front 
     $xml = new DOMDocument('1.0','UTF-8');
     $xml->loadHTML($html);
     foreach($xml->getElementsByTagName('a') as $link) { 
@@ -139,7 +126,7 @@ if (file_exists($doc_footer_file_path)) {
     }
 }
 // main
-$request_uri_no_start = ltrim($request_uri, $start_dir_path); // tutorial/default.md, tutorial/, tutorial
+$request_uri_no_start = substr($request_uri, strlen($start_dir_path)); // tutorial/default.md, tutorial/, tutorial
 if ($request_uri_no_start == "") {
     $doc_main_file_path = "default.md";
 } elseif (substr($request_uri_no_start, -1) == "/") {
@@ -149,7 +136,6 @@ if ($request_uri_no_start == "") {
 } else {
     $doc_main_file_path = $request_uri_no_start . "/default.md";
 }
-// var_dump($doc_main_file_path);
 if (!file_exists($doc_main_file_path)) {
     $doc_main_file_path = "404.md";
 }
@@ -165,22 +151,22 @@ if (file_exists($meta_file_path)) {
     $json = file_get_contents($meta_file_path);
     $meta = json_decode($json, true);
 }
-// var_dump($data);
-// echo getcwd();
-// echo PHP_EOL;
+// echo "<p>";
+// var_dump($request_uri_no_start);
+// echo "</p>";
 // var_dump(glob('*'));
 // echo PHP_EOL;
 // exit();
 switch (@$meta["mode"]) {
     case "ucp":
-        include "view/ucp.php";
+        include "markdown-website/view/ucp.php";
         break;
     case "itti":
-        include "view/itti.php";
+        include "markdown-website/view/itti.php";
         break;
     case "text":
-        include "view/text.php";
+        include "markdown-website/view/text.php";
         break;
     default:
-        include "view/text.php";
+        include "markdown-website/view/text.php";
 }
