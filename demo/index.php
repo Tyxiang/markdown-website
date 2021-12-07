@@ -13,10 +13,10 @@ date_default_timezone_set("Asia/Shanghai");
 //header('Access-Control-Allow-Headers:X-Requested-With,X_Requested_With');
 
 $app_dir_path = 'application/';
-$config_dir_path = 'config/';
+$config_dir_path = 'configer/';
 
 // config
-$config_file_path = $config_dir_path . "setting.json";
+$config_file_path = $config_dir_path . "config.json";
 if (file_exists($config_file_path)) {
     $json = file_get_contents($config_file_path);
     $config = json_decode($json, true);
@@ -37,7 +37,7 @@ $the_same_length = strspn($script_name ^ $request_uri_no_query, "\0");
 $start_dir_path = substr($script_name, 0, $the_same_length); // /src/, /src/, /src/
 
 // header
-$doc_header_file_path = "_header.md";
+$doc_header_file_path = $config_dir_path . "header.md";
 if (file_exists($doc_header_file_path)) {
     $md = file_get_contents($doc_header_file_path);
     $Parsedown = new Parsedown();
@@ -65,7 +65,7 @@ if (file_exists($doc_header_file_path)) {
     }
 }
 // ending
-$doc_ending_file_path = "_ending.md";
+$doc_ending_file_path = $config_dir_path . "ending.md";
 if (file_exists($doc_ending_file_path)) {
     $md = file_get_contents($doc_ending_file_path);
     $Parsedown = new Parsedown();
@@ -105,7 +105,7 @@ if (file_exists($doc_ending_file_path)) {
     }
 }
 // footer
-$doc_footer_file_path = "_footer.md";
+$doc_footer_file_path = $config_dir_path . "footer.md";
 if (file_exists($doc_footer_file_path)) {
     $md = file_get_contents($doc_footer_file_path);
     $Parsedown = new Parsedown();
@@ -140,7 +140,7 @@ if ($request_uri_no_query_no_start == "") {
     $doc_main_file_path = $request_uri_no_query_no_start . "/default.md";
 }
 if (!file_exists($doc_main_file_path)) {
-    $doc_main_file_path = "404.md";
+    $doc_main_file_path = $config_dir_path . "404.md";
 }
 $md = file_get_contents($doc_main_file_path);
 $Parsedown = new Parsedown();
