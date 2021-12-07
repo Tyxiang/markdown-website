@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" Content="<?=@$config['description'] . " " . @$meta['description']?>">
         <meta name="Keywords" Content="<?=@$config['keywords'] . " " . @$meta['keywords']?>">
         <base href="<?=$work_dir_path?>">
         <link rel="shortcut icon" href="<?=$start_dir_path . $config_dir_path?>view/icon/fav.ico" >
