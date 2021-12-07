@@ -12,17 +12,18 @@ date_default_timezone_set("Asia/Shanghai");
 //header('Access-Control-Allow-Methods:*');
 //header('Access-Control-Allow-Headers:X-Requested-With,X_Requested_With');
 
-$php_dir_path = 'markdown-website/';
+$app_dir_path = 'application/';
+$config_dir_path = 'config/';
 
 // config
-$config_file_path = $php_dir_path . "config.json";
+$config_file_path = $config_dir_path . "setting.json";
 if (file_exists($config_file_path)) {
     $json = file_get_contents($config_file_path);
     $config = json_decode($json, true);
 }
 
-include $php_dir_path . "vendor/Parsedown.php";
-include $php_dir_path . "vendor/heading-array.php";
+include $app_dir_path . "vendor/Parsedown.php";
+include $app_dir_path . "vendor/heading-array.php";
 
 // request
 // fimik.com/src/tutorial/default.md, fimik.com/src/tutorial/, fimik.com/src/tutorial
@@ -141,7 +142,6 @@ if ($request_uri_no_query_no_start == "") {
 if (!file_exists($doc_main_file_path)) {
     $doc_main_file_path = "404.md";
 }
-$work_dir_path = $start_dir_path . dirname($doc_main_file_path) . '/';
 $md = file_get_contents($doc_main_file_path);
 $Parsedown = new Parsedown();
 $html = $Parsedown->text($md);
@@ -153,22 +153,24 @@ if (file_exists($meta_file_path)) {
     $json = file_get_contents($meta_file_path);
     $meta = json_decode($json, true);
 }
+// work dir path
+$work_dir_path = $start_dir_path . dirname($doc_main_file_path) . '/';
 // echo "<p>";
-// var_dump($request_uri_no_start);
+// var_dump($request_uri_no_query_no_start);
 // echo "</p>";
 // var_dump(glob('*'));
 // echo PHP_EOL;
 // exit();
 switch (@$meta["mode"]) {
     case "ucp":
-        include $php_dir_path . "view/ucp.php";
+        include $app_dir_path . "view/ucp.php";
         break;
     case "itti":
-        include $php_dir_path . "view/itti.php";
+        include $app_dir_path . "view/itti.php";
         break;
     case "text":
-        include $php_dir_path . "view/text.php";
+        include $app_dir_path . "view/text.php";
         break;
     default:
-        include $php_dir_path . "view/text.php";
+        include $app_dir_path . "view/text.php";
 }

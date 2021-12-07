@@ -50,3 +50,5 @@ All rights reserved
 ```
 
 [More ... ](doc/readme.md)
+
+- 如果动画出不来，可以看下是不是“高级系统配置”中关闭了动画显示；
