@@ -12,8 +12,8 @@ date_default_timezone_set("Asia/Shanghai");
 //header('Access-Control-Allow-Methods:*');
 //header('Access-Control-Allow-Headers:X-Requested-With,X_Requested_With');
 
-$app_dir_path = 'application/';
-$config_dir_path = 'configer/';
+$app_dir_path = 'app/';
+$config_dir_path = 'conf/';
 
 // config
 $config_file_path = $config_dir_path . "config.json";

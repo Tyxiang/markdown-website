@@ -1,1 +1,2 @@
-- .md 改 .html
+- .md 改 .html？貌似不太行。
+- .md 影响 SEO 吗？
